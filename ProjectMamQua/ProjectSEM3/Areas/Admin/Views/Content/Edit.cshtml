@@ -1,0 +1,195 @@
+﻿@model ProjectMamQua.EF.Content
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section Script
+{
+
+    <script src="~/Assets/Admin/ContentController.js"></script>
+    @* cấu hình ckfinder và ckeditor *@
+    <script>
+        $('#btnImage').on('click', function (e) {
+            e.preventDefault();
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (url) {
+                $('#txtImg').val(url);
+                $('.txtImage').attr("src", url);
+            };
+            finder.popup();
+        });
+        CKEDITOR.replace("Detail");
+
+    </script>
+}
+
+<div class="x_content">
+    <div class="">
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+            @using (Html.BeginForm("Edit","Content",FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="col-md-8 col-sm-12 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Tên bài viết</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li>
+                                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="#">Settings 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Settings 2</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+
+                            <div class="form-horizontal">
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Name, htmlAttributes: new {@class = "col-md-12"})
+                                    <div class="col-md-21">
+                                        @Html.TextBoxFor(model => model.Name, new {@class = "form-control", @id = "convert", @onkeyup = "slug(this.value)"})
+                                        @Html.ValidationMessageFor(model => model.Name, "", new {@class = "text-danger"})
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.MetaTitle, htmlAttributes: new {@class = "col-md-12"})
+                                    <div class="col-md-12">
+                                        @Html.TextBoxFor(model => model.MetaTitle, new {@class = "form-control", @id = "title", @readonly = "true"})
+                                        @Html.ValidationMessageFor(model => model.MetaTitle, "", new {@class = "text-danger"})
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Danh mục</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+
+                            <div class="form-horizontal">
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "col-md-12" })
+                                    <div class="col-md-12">
+                                        @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Detail, htmlAttributes: new { @class = "col-md-12" })
+                                    <div class="col-md-12">
+                                        @Html.TextAreaFor(model => model.Detail, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "col-md-12" })
+                                    <div class="col-md-12">
+                                        <div class="checkbox ">
+
+                                            <label>
+                                                @Html.CheckBoxFor(model => model.Status, new { @class = "form-control flat" })
+                                                (*)Chọn để hiển thị
+                                            </label>
+                                            @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                    @* danh muc *@
+                    <div class="col-md-4 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Danh mục</h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+
+                                <div class="form-horizontal">
+
+                                    <div class="form-group">
+                                        <div class="col-md-11">
+                                            @Html.DropDownListFor(model => model.ContentCategoryID, null, "---Chọn danh mục bài viết---", new { @class = "form-control", @type = "number" })
+                                            @Html.ValidationMessageFor(model => model.ContentCategoryID, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    @* hinh anh *@
+                    <div class="col-md-4 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2> Ảnh chính</h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+
+                                <div class="form-horizontal ">
+                                    <div class="col-md-offset-1 col-md-12">
+                                        @Html.HiddenFor(model => model.Image, new { @class = "txtImage", @id = "txtImg" })
+                                        <img src="@Model.Image" class="img-rounded img-thumbnail txtImage" id="btnImage" width="240px" height="240px" style="cursor: pointer" />
+                                        @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    @* submit *@
+                    <div class="col-md-4 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2> Ảnh chính</h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+
+                                <div class="form-horizontal ">
+                                    <div class="form-group">
+                                      
+                                            <input type="submit" value="Cập nhập" class="btn btn-success" />
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+            }
+        </div>
+    </div>
+</div>

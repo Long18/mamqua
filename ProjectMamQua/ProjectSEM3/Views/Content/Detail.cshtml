@@ -1,0 +1,107 @@
+﻿@using ProjectMamQua.EF
+@model ProjectMamQua.EF.Content
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var listCategory= ViewBag.listCategory;
+}
+<section id="content">
+    <div class="container top">
+        <div class="row">
+            <div class="span9">
+                <div class="post-preview">
+                    <h3>@Model.Name</h3>
+                    <div class="image"><img src="@Model.Image" style="width:733px; height:301px;" alt=""></div>
+                    <div class="post-meta"> <span class="meta-date"><i class="icon-clock-alt"></i>@Model.CreateDate.ToString("yyyy-MM-dd")</span> <span class="meta-author"><i class="icon-user-2"></i><a href="#">@Model.CreateBy</a></span> <span class="meta-tags"><i class="icon-tag-1"></i><a href="#">Web Design</a></span> <span class="meta-comment"><i class="icon-chat-1"></i><a href="#">12 comments</a></span> <span class="meta-views"><i class="icon-cog-1"></i><a href="#">@Model.ViewCount Lượt xem</a></span> </div>
+                    <p>@Model.Description </p>
+
+                    @Html.Raw(Model.Detail)
+
+                    <div class="post-tags"><i class="icon-tag-1"></i><a href="#">Web Design</a>, <a href="#">Wordpress</a>, <a href="#">Animation</a></div>
+                    <div class="post-navigation">
+                        <div class="pull-left"><i class="icon-left-open"></i>&nbsp;<a href="#">Bài trước</a></div>
+                        <div class="pull-right"><a href="#">Bài tiếp</a>&nbsp;<i class="icon-right-open"></i></div>
+                    </div>
+                    <div class="line"></div>
+                    <h3>Bình luận</h3>
+                    <div class="comments">
+                        <div class="fb-comments" data-href="http://hightech.com/bai-viet/@Model.MetaTitle-@Model.ID" data-width="100%" data-numposts="5"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="span3">
+                <div class="block">
+                    <div class="block-title">Categories</div>
+                    <div class="block-content">
+                        @{Html.RenderAction("CategoryContent","Content");}
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="block-content">
+                        <ul class="nav-tabs contentTab">
+                            <li class="active"><a href="#tab1">Popular</a></li>
+                            <li><a href="#tab2">Recent</a></li>
+                            <li><a href="#tab3">Comment</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab1">
+                                <div class="wrapper">
+                                    <img src="img/popular_img1.jpg" width="55" height="55" alt="" class="pull-left border"> <span class="date color"><strong>14 August, 2013</strong></span> <br>
+                                    Fusce vulputate ne sed egestas quam.
+                                </div>
+                                <div class="wrapper">
+                                    <img src="~/Assets/Client/img/popular_img2.jpg" width="55" height="55" alt="" class="pull-left border"> <span class="date color"><strong>14 August, 2013</strong></span> <br>
+                                    Praesent vitae dui. Morbi id tellus. Cum sociis<br>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab2">
+                                <p>Praesent laoreet rutrum malesuada duis ac eget ac sapien accumsan elementum ac nullam pretium, eros nec consectetur euismod, elit tortor consequat </p>
+                                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus posuere lectus. Fusce vulputate nibh egestas orci. Aliquam lectus. Morbi eget dolor ullamcorper massa pellentesque sagittis. Morbi sit amet quam. </p>
+                            </div>
+                            <div class="tab-pane" id="tab3">
+                                <p>Praesent laoreet rutrum malesuada duis ac eget ac sapien accumsan elementum ac nullam pretium, eros nec consectetur euismod, elit tortor consequat </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="block-content">
+                        <div class="block-title">Text Widget</div>
+                        <p>Maecenas eu enim in lorem scelerisque auctor. Ut non erat. Suspendisse fermentum posuere lectus. Fusce vulputate nibh egestas orci. Aliquam lectus. Morbi eget dolor ullamcorper massa pellentesque sagittis. Morbi sit amet quam. </p>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="block-content">
+                        <div class="block-title">Popular Tags</div>
+                        <div class="tags_cloud"><a href="#">Web Developer</a> <a href="#">Branding</a> <a href="#">Wordpress</a> <a href="#">Web Design</a> <a href="#">Logo</a> <a href="#">PHP</a> <a href="#">Graphic</a> <a href="#">Competitions</a> <a href="#">Awards &amp; Recognition</a></div>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="block-content">
+                        <div class="block-title">Latest Tweets</div>
+                        <div class="twit">
+                            <div class="icon"><i class="icon-twitter-bird"></i></div>
+                            <div class="mess">
+                                Nullam id justo sed diam aliquam tincidunt. Duis sollicitudin, dui ac More info at  labore <a href="#">http://t.co/f9E9cJEg </a>Thanks for the patience :)<br>
+                                3 days ago
+                            </div>
+                        </div>
+                        <div class="twit">
+                            <div class="icon"><i class="icon-twitter-bird"></i></div>
+                            <div class="mess">
+                                Curabitur convallis facilisis lorem. Curabi tur quis tortordi. Maecenas tincidunt adipiscing tellus. Aliquam erat volutpat. Nulla porttitor tortor at nisl. Mauris sem ac risu magna sed <a href="#">http://t.co/VCB4tX7r</a><br>
+                                3 days ago
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="block-content">
+                        <div class="block-title">Features Video</div>
+                        <p><a href="#"><img src="img/features_video.jpg" alt="" class="full-width"></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,109 @@
+﻿@model ProjectMamQua.EF.Order
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section Script
+{
+    <script>
+        function printDiv(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            var originalContents = document.body.innerHTML;
+
+            document.body.innerHTML = printContents;
+
+            window.print();
+
+            document.body.innerHTML = originalContents;
+        }
+    </script>
+}
+<div class="x_content">
+    <div class="">
+        <button class="btn btn-default" onclick="printDiv('x_content')">In Đơn Hàng</button>
+        <div class="clearfix"></div>
+
+        <div class="row">
+
+
+            <div class="col-md-12 col-sm-12 col-xs-12" id="x_content">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Chi tiết đơn hàng của <span style="color: red">@Model.ShipName</span></h2>
+                  
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content" >
+                        <div id="datatable-checkbox_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                            <div class="row">
+                                <table id="printTable" class="table" border="1" role="grid">
+                                    <tr class="text-center"  style="background-color: beige">
+                                        <td colspan="5">
+                                            <h2><b>Đơn hàng </b></h2></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tên khách hàng</td>
+                                        <td colspan="4">@Model.ShipName</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Số điện thoại</td>
+                                        <td colspan="4">@Model.ShipPhone</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td colspan="4">@Model.ShipEmail</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Địa chỉ khách hàng</td>
+                                        <td colspan="4">@Model.ShipAddress</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ngày tạo</td>
+                                        <td colspan="4">@Model.ShipCreateDate</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tình trạng</td>
+                                        <td colspan="4">..............................................................</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5"></td>
+                                    </tr>
+                                    <tr  style="background-color: beige">
+                                        <td colspan="5"><b>Sản phẩm</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>ID</td>
+                                        <td>Tên sản phẩm</td>
+                                        <td>Giá</td>
+                                        <td>Số lượng</td>
+                                        <td>Thành tiền</td>
+                                    </tr>
+                                    @{decimal? total = 0;}
+                                    @foreach (var item in Model.OrderDetails)
+                                    {
+                                        <tr>
+                                            <td>@item.ProductID</td>
+                                            <td>@Html.DisplayFor(prmodel => item.Product.Name)</td>
+                                            <td>@item.Price.GetValueOrDefault(0).ToString("N0") VNĐ</td>
+                                            <td>@item.Quantity</td>
+                                            <td>@((item.Quantity*item.Price).GetValueOrDefault(0).ToString("N0")) VNĐ</td>
+                                       @{
+                                           total = total + (item.Price*item.Quantity);
+                                       }
+                                        </tr>
+                                    }
+                                    <tr style="background-color: beige">
+                                        <td colspan="4"><b>Tổng tiền</b></td>
+                                        <td>@total.GetValueOrDefault(0).ToString("N0") VNĐ</td>
+                                    </tr>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

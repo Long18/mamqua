@@ -1,0 +1,76 @@
+/* Elastislide Style */
+/*.carousel { position:static;}
+*/
+.es-carousel-wrapper {
+	margin:0 -10px;
+}
+@media only screen and (max-width: 767px) {
+ .es-carousel-wrapper {
+ margin-left:0;
+}
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+ .es-carousel-wrapper {
+ margin-left:0;
+}
+}
+.es-carousel {
+	overflow:hidden;
+	padding: 0 10px;
+	margin-top:10px;
+	margin-bottom:11px;
+}
+.style1 .es-carousel {
+	margin-bottom:14px;
+}
+.style2 .es-carousel {
+	margin: 0 0 30px;
+}
+.es-carousel .product_outer {
+	display:none;
+}
+.es-carousel .carousel_items .product, .es-carousel .carousel_item {
+	height:100%;
+	display:block;
+	float:left;
+	line-height:1.5em;
+}
+.es-nav a.btn {
+	position:absolute;
+	top:-31px;
+	right:50px;
+	background-color:#e2e2e2;
+	width:34px;
+	height:26px;
+	padding: 4px 0;
+	margin-top:-13px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-transition: background-color 0.25s 0s ease;
+	-moz-transition: background-color 0.25s 0s ease;
+	-o-transition: background-color 0.25s 0s ease;
+}
+.es-nav a.btn:hover {
+	color:#fff;
+	background-color:#9d3bc6;
+	-webkit-transition: background-color 0.25s 0s ease;
+	-moz-transition: background-color 0.25s 0s ease;
+	-o-transition: background-color 0.25s 0s ease;
+}
+.es-nav span.disable a {
+	opacity:0.3;
+}
+.es-nav span.disable a.btn:hover {
+	background-color:#e2e2e2;
+}
+.style1 .es-nav a.btn {
+	top:-30px;
+}
+.es-nav span.es-nav-next a.btn {
+	right:8px;
+	left:auto;
+}
+.es-nav span:hover {
+	opacity:1.0;
+}

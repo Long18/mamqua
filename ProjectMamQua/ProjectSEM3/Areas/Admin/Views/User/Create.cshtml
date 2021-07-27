@@ -1,0 +1,218 @@
+﻿@model ProjectMamQua.EF.User
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section Script
+{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.62/jquery.inputmask.bundle.js"></script>
+
+
+    <script>
+        $(window).load(function () {
+            var phones = [{ "mask": "(###) ###-####" }, { "mask": "(###) ###-#####" }];
+            $('#textbox').inputmask({
+                mask: phones,
+                greedy: false,
+                definitions: { '#': { validator: "[0-9]", cardinality: 1 } }
+            });
+        });
+    </script>
+    <script>
+        $('#btnImage').on('click', function (e) {
+            e.preventDefault();
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (url) {
+                $('#txtImg').val(url);
+                $('.txtImage').attr("src", url);
+            };
+            finder.popup();
+        });
+        // CKEDITOR.replace("");
+        jQuery.browser = {};
+        $('#datepick').datepicker({
+            maxDate: -6570,
+            changeMonth: true,
+            changeYear: true
+        });
+    
+ 
+        //$('#datepick').daterangepicker({
+        //  singleDatePicker: true,
+        //  singleClasses: "picker_1",
+        //  maxDate: -6570,
+        //  showDropdowns: true
+        //}, function(start, end, label) {
+        //  console.log(start.toISOString(), end.toISOString(), label);
+        //});
+     
+
+    </script>
+}
+
+<div class="x_content">
+    <div class="">
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Thêm Tài Khoản</h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li>
+                                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="#">Settings 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Settings 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-horizontal">
+
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group item form-group bad">
+
+                                    <div class="col-md-offset-3 col-md-2">
+                                        @Html.HiddenFor(model => model.Avatar, new { @class = "txtImage", @id = "txtImg" })
+                                        <img src="~/Data/avatar_default.png" class="img-rounded img-thumbnail txtImage" id="btnImage" width="120px" height="120px" style="cursor: pointer" />
+                                        @Html.ValidationMessageFor(model => model.Avatar, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        @Html.TextBoxFor(model => model.Password, new { @class = "form-control col-md-7 col-xs-12", @type = "password", @min="6" ,@max="10"})
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Genre, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="btn-group col-md-6 col-xs-11" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                @Html.RadioButton("Genre", "Nam", true, new { id = "IsMale" }) Nam
+                                            </label>
+                                            <label class="btn btn-primary">
+                                                @Html.RadioButton("Genre", "Nữ", new { id = "IsFemale" }) Nữ
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.BirthDay, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        @Html.TextBoxFor(model => model.BirthDay, new { @class = "form-control col-md-7 col-xs-12", @id = "datepick" })
+                                        @Html.ValidationMessageFor(model => model.BirthDay, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        @Html.TextAreaFor(model => model.Address, new { @class = "form-control col-md-7 col-xs-12" })
+                                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        @Html.TextBoxFor(model => model.Phone, new { @class = "form-control col-md-7 col-xs-12", @id = "textbox" })
+                                        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.GroupUserID, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        @Html.DropDownListFor(model => model.GroupUserID, null, "---Chọn quyền cho tài khoản---", new { @class = "form-control col-md-7 col-xs-12" })
+                                        @Html.ValidationMessageFor(model => model.GroupUserID, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Active, htmlAttributes: new { @class = " control-label col-md-3 col-sm-3 col-xs-12" })
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="checkbox ">
+
+                                            <label>
+                                                @Html.CheckBoxFor(model => model.Active, new { @class = "form-control col-md-7 col-xs-12 flat" })
+                                                (*)Chọn để cấp quyền truy cập
+                                            </label>
+                                            @Html.ValidationMessageFor(model => model.Active, "", new { @class = "text-danger" })
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-7 col-md-7 col-xs-12">
+                                        <input type="submit" value="Thêm tài khoản" class="btn btn-success" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                        <div>
+                            @Html.ActionLink("Quay lại danh sách", "Index")
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

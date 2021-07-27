@@ -1,0 +1,165 @@
+﻿@model IEnumerable<ProjectMamQua.EF.Business>
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+@section Script{
+
+    <script src="~/Assets/Admin/BusinessController.js"></script>
+}
+<div class="x_content">
+    <div class="">
+
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Bảng chức năng</h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li>
+                                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="#">Settings 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Settings 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+
+                        <div id="datatable-checkbox_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="dataTables_length" id="datatable-checkbox_length">
+                                        <a href="/Admin/Business/Update" class="btn btn-sm btn-default">
+                                            <img src="~/Assets/Admin/images/undelete.png" width="30px" height="30px" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table id="datatable-checkbox" class="table table-striped table-bordered table-hover" role="grid">
+                                        <thead>
+                                        <tr role="row" class="">
+                                            <th>ID</th>
+                                            <th>Tên</th>
+                                            <th>#</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr role="row" id="row_@item.ID" class="odd">
+                                                <td>
+                                                    @item.ID
+                                                </td>
+                                                <td>@item.Name</td>
+                                                <td>
+                                                    <div class="text-right">
+                                                        <a href="#" data-toggle="tooltip" title="Cập nhập" class="btn btn-default btn-sm btn-Edit" data-id="@item.ID">
+                                                            <img src="~/Assets/Admin/images/Edit-validated-icon.png" width="16px" height="16px"/>
+                                                        </a>
+                                                        <a href="#" data-toggle="tooltip" title="Xóa" class="btn btn-default btn-delete-business btn-sm" data-id="@item.ID">
+                                                            <img src="~/Assets/Admin/images/deletered.png" width="16px" height="16px"/>
+                                                        </a>
+                                                        <a href="/Admin/Permission/Index/@item.ID" data-toggle="tooltip" title="Danh sách cách hành động" class="btn btn-success btn-sm">
+                                                            <img src="~/Assets/Admin/images/addressbook grey.ico" width="16px" height="16px" />
+                                                        </a>
+                                                   
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+
+
+                                        </tbody>
+                                    </table>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog"
+                                         aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <button type="button" class="close"
+                                                            data-dismiss="modal">
+                                                        <span aria-hidden="true">&times;</span>
+                                                        <span class="sr-only">Close</span>
+                                                    </button>
+                                                    <h4 class="modal-title" id="myModalLabel">
+                                                        Cập nhập
+                                                    </h4>
+                                                </div>
+
+                                                <!-- Modal Body -->
+                                                <div class="modal-body">
+
+                                                    <form role="form">
+                                                        <div class="form-group" style="width: 100%">
+                                                            <label for="exampleInputEmail1">ID</label>
+                                                            <input type="text" class="form-control" style="width: 100%"
+                                                                   id="txtID" placeholder="Nhập tên danh mục" readonly="readonly"/>
+                                                           
+                                                        </div>
+                                                        <div class="form-group" style="width: 100%">
+                                                            <label for="exampleInputPassword1">Tên</label>
+                                                            <input type="text" class="form-control" style="width: 100%" id="txtName"
+                                                                   placeholder="Nhập tên " />
+                                                        </div>
+
+                                                    </form>
+
+
+                                                </div>
+
+                                                <!-- Modal Footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default"
+                                                            data-dismiss="modal">
+                                                        Thoát
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary" id="btn-Add-data">
+                                                        <span class="glyphicon glyphicon-plus"></span>Lưu
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                            <div class="row">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

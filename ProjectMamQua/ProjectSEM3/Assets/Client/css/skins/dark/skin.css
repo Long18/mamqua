@@ -1,0 +1,40 @@
+/* LayerSlider Full Width Skin */
+
+.ls-dark {
+	background-color: #fff; 
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	border:3px solid #fff;
+}
+.ls-dark .ls-nav-prev, .ls-dark .ls-nav-next {
+	width: 59px;
+	height: 54px;
+	margin: -20px 0 0;
+	display: block;
+	background: #f8f8f8;
+	z-index: 10000;
+	top: 50%;
+	margin-top: -20px;
+	position: absolute;
+	cursor: pointer;
+	font-size: 40px;
+	padding-top:7px;
+	color:#ff0066;
+	opacity: 0;
+	text-align:center;
+}
+.ls-dark:hover .ls-nav-prev, .ls-dark:hover .ls-nav-next {
+	opacity: 0.7;
+-webkit-transition: all .3s ease;
+}
+.ls-dark .ls-nav-prev:hover, .ls-dark .ls-nav-next:hover {
+	opacity: 1;
+-webkit-transition: all .3s ease;
+}
+.ls-dark .ls-nav-prev {
+	left: 1%;
+}
+.ls-dark .ls-nav-next {
+	right: 1%;
+}

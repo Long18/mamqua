@@ -1,0 +1,81 @@
+/*********************************************
+	-	SETTINGS FOR BANNER CONTAINERS	-
+**********************************************/
+
+.tp-banner-container {
+	width:100%;
+	position:relative;
+	padding:0;
+}
+.tp-banner {
+	width:100%;
+	position:relative;
+	visibility:hidden;
+}
+.tp-banner-fullscreen-container {
+	width:100%;
+	position:relative;
+	padding:0;
+}
+.tp-leftarrow.default, .tp-rightarrow.default {
+    background: #fff;
+    border-radius: 3px;
+    color: #000;
+    cursor: pointer;
+    font-size: 40px;
+    height: 53px;
+    line-height: 40px;
+    padding-top: 8px;
+    position: relative;
+    text-indent: 8px;
+    width: 59px;
+    z-index: 100;
+}
+.tp-leftarrow.default:before, .tp-rightarrow.default:before {
+	font-family: 'andepict';
+	font-size:30px !important;
+	line-height:30px !important;
+	content:'\2190';
+	margin: 0 0 0 5px
+}
+.tp-rightarrow.default:before {
+	content:'\2192';
+	margin: 0 0 0 6px;
+}
+
+.text1 {
+	font: bold 77px/1em 'Gilda Display', serif;
+	font-weight:400;
+	color:#000;
+	text-transform:uppercase;
+}
+.text2 {
+	font: bold 27px/1em 'Gilda Display', serif;
+	font-weight:400;
+	color:#686868;
+	text-transform:uppercase;
+}
+.text3 {
+	font: bold 17px/1em 'Gilda Display', serif;
+	font-weight:400;
+	color:#333333;
+	text-transform:uppercase;
+}
+.text4 {
+	font: bold 60px/1em 'Gilda Display', serif;
+	font-weight:400;
+	color:#fff;
+	text-transform:uppercase;
+}
+.text5 {
+	font: bold 27px/1em 'Gilda Display', serif;
+	font-weight:400;
+	color:#bab3b1;
+	text-transform:uppercase;
+}
+.text6 {
+	font: bold 20px/1em 'Gilda Display', serif;
+	font-weight:400;
+	color:#fff;
+	text-transform:uppercase;
+}

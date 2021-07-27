@@ -1,0 +1,190 @@
+﻿@using System.Configuration
+@model List<ProjectSEM3.Models.CartItem>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Script
+{
+    <script src="~/Assets/Client/CartController.js"></script>
+}
+
+<section id="content">
+    <div class="container top">
+        @if (Model.Count > 0)
+        {
+            <div class="row">
+                <div class="span12">
+                    <div class="wrapper">
+                        <h2 class="pull-left">Giỏ hàng</h2>
+                        <div class="pull-right right-button">
+                            <a href="/Cart/Payment" class="button button-2x">Thanh toán</a>
+                        </div>
+                    </div>
+
+                    <div class="box-wrapper">
+                        <div class="inside">
+                            <form action="@ConfigurationManager.AppSettings["posturl"]" method="POST">
+                                <table class="table shopping-cart-table">
+                                    <tbody>
+                                        <tr>
+                                            <th>&nbsp;</th>
+                                            <th>Tên sản phẩm</th>
+                                            <th class="aligncenter">Giá</th>
+                                            <th class="aligncenter">Số lượng</th>
+                                            <th class="aligncenter">Tổng cộng</th>
+                                            <th class="aligncenter">&nbsp;</th>
+                                        </tr>
+                                        @{
+                                            decimal total = 0;
+                                            var index = 0; //khai báo vị trí
+                                        }
+
+                                        @foreach (var item in Model)
+                                        {
+                                            index += 1; //tăng lên 1 qua từng vòng lặp
+                                            <tr>
+                                                <td><img src="@item.ProductModel.Image" width="136" height="129" alt=""></td>
+                                                <td>
+                                                    <span class="cart-col-name">Tên sản phẩm </span>
+                                                    <strong>
+                                                        <a href="/chi-tiet/@item.ProductModel.MetaTitle-@item.ProductModel.ID">@item.ProductModel.Name</a>
+                                                    </strong>
+                                                    <blockquote>
+                                                        <p>HSX : @item.ProductModel.Producer</p>
+                                                        <p>Danh mục: @item.ProductModel.ProductCategory</p>
+                                                    </blockquote>
+                                                </td>
+
+                                                <td class="aligncenter">
+                                                    @if (item.ProductModel.Sale != null)
+                                                {
+                                                <span class="cart-col-name">Giá: </span>@item.ProductModel.Sale.GetValueOrDefault(0).ToString("N0")<span> VNĐ</span>
+                                                <strike style="color: red">@item.ProductModel.Price.GetValueOrDefault(0).ToString("N0")</strike>
+                                                }
+                                                else
+                                                {
+                                                <span class="cart-col-name">Giá: </span>@item.ProductModel.Price.GetValueOrDefault(0).ToString("N0")
+                                                <span> VNĐ</span>
+                                                }
+
+
+                                                </td>
+                                                <td class="aligncenter">
+                                                    <span class="cart-col-name">Số lượng: </span>
+                                                    <input type="number" name="textfield" id="textfield" data-id="@item.ProductModel.ID" value="@item.Quantity" min="1" max="5" class="quantity">
+                                                </td>
+                                                <td class="aligncenter">
+                                                    <span class="cart-col-name">Subtotal: </span>
+                                                    @if (item.ProductModel.Sale != null)
+                                                {
+                                                <span class="cart-col-name">Giá: </span>@((item.ProductModel.Sale.GetValueOrDefault(0)*item.Quantity).ToString("N0"))
+                                                <span>VNĐ</span>
+
+                                                    total = total + (item.ProductModel.Sale.GetValueOrDefault(0)*item.Quantity);
+                                                    <!-- thông tin sản phẩm thanh toán -->
+                                                <input type="hidden" name="amount_@index" value="@item.ProductModel.Sale">
+
+                                                }
+                                                else
+                                                {
+                                                <span class="cart-col-name">Giá: </span>@((item.ProductModel.Price.GetValueOrDefault(0)*item.Quantity).ToString("N0"))
+
+                                                    <span>VNĐ</span>
+
+                                                    total = total + (item.ProductModel.Price.GetValueOrDefault(0)*item.Quantity);
+                                                    <!-- thông tin sản phẩm thanh toán -->
+                                                <input type="hidden" name="amount_@index" value="@item.ProductModel.Price">
+                                                }
+                                                </td>
+                                                <td class="aligncenter"><a href="#" class="icon-trash-2 custom_color btnDelete" data-id="@item.ProductModel.ID"></a></td>
+                                            </tr>
+                                        <!-- thông tin sản phẩm thanh toán -->
+                                            <input type="hidden" name="item_name_@index" value="@item.ProductModel.Name">
+                                            <input type="hidden" name="item_number_@index" value="@item.ProductModel.ID">
+                                            <input type="hidden" name="quantity_@index" value="@item.Quantity">
+                                        <!-- Cấu hình cho paypal nhận giữ liệu truyền qua -->
+                                        }
+
+                                    </tbody>
+                                    <!-- thoogn tin cấu hình cho thanh toán  -->
+                                    <input type="hidden" name="upload" value="1">
+                                    <input type="hidden" name="return" value="@ConfigurationManager.AppSettings[" returnurl"]">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="business" value="@ConfigurationManager.AppSettings[" business"]">
+                                    <input type="hidden" name="charset" value="utf-8">
+                                    <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif">
+                                </table>
+                            </form>
+
+                            <div class="wrapper">
+                                <div class="pull-left">
+                                    <button id="btnContinue" class="btn">Tiếp tục mua hàng</button>
+                                    <button id="btnUpdate" class="btn">Cập nhập giỏ hàng</button>
+                                    <button id="btnDeleteAll" class="btn">Xóa giỏ hàng</button>
+                                </div>
+                                <div class="pull-right hidden-phone">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="span4">
+                   
+                </div>
+                <div class="span4">
+                    <div class="box-wrapper">
+                        <div class="inside">
+                            <h2>Nhập mã giảm giá</h2>
+                            <p>Mã giảm giá</p>
+                            <input type="text" name="textfield3" id="textfield3" class="fullwidth">
+                            <div class="wrapper">
+                                <div class="pull-left">
+                                    <a href="#" class="button button-2x">Mã</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="box-wrapper">
+                        <div class="inside">
+                            <table class="table shopping-cart-table-total">
+                                <tbody>
+                                    <tr>
+                                        <th class="alignright">Tổng tiền</th>
+                                        <th>@total.ToString("N0") VNĐ</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="alignright"><h4>Tổng cộng</h4></td>
+                                        <td><h4>@total.ToString("N0") VNĐ</h4></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="aligncenter">
+                                <p>
+                                    <a href="/Cart/Payment" class="button button-2x">Thanh toán</a>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                            }
+                                            else
+                                            {
+
+                                                <div class="alert alert-error alert-dismissable">
+                                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                                    <h3>Rỗng</h3>
+                                                    Chưa có sản phẩm nào trong giỏ hàng!
+                                                </div>
+
+                                            }
+    </div>
+</section>

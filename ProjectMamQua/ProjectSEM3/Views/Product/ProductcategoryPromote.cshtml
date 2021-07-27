@@ -1,0 +1,385 @@
+﻿@model IEnumerable<ProjectSEM3.Models.ProductModel>
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Slide
+{
+
+}
+
+<section id="content">
+    <div class="container top">
+        <div class="row">
+            <div class="span9" id="column_right">
+                <section class="slider">
+                    <div class="flexslider small">
+
+                        <div class="flex-viewport" style="overflow: hidden; position: relative;">
+                            <ul class="slides" style="width: 1200%; transition-duration: 0.6s; transform: translate3d(-1740px, 0px, 0px);">
+
+                                @* slide top *@
+                                @foreach (var item in ViewBag.slideTop)
+                                {
+                                    <li class="clone" style="width: 870px; float: left; display: block;"> <a href="#"><img src="@item.Image" style="max-width:100%; max-height:300px; " alt="" draggable="false"></a> </li>
+                                }
+
+                            </ul>
+                        </div><ul class="flex-direction-nav"><li><a class="flex-prev" href="#"><i class="icon-left-thin"></i></a></li><li><a class="flex-next" href="#"><i class="icon-right-thin"></i></a></li></ul>
+                    </div>
+                </section>
+                <div class="cleancode">
+                </div>
+                <div class="listing_header_row1">
+                    <div class="pull-left">
+                        <label>Sắp xếp:</label>
+                        <div class="select_wrapper width1">
+                            <select name="select3" class="custom sort-by" tabindex="1" sb="40335240" style="display: none;">
+                                <option value="position">Vị trí</option>
+                                <option value="name">Tên</option>
+                                <option value="price">Giá</option>
+                                <option value="rating">Đánh giá</option>
+                            </select><div id="sbHolder_40335240" class="sbHolder" style="display: none;" tabindex="1"><a id="sbToggle_40335240" href="#" class="sbToggle"></a><a id="sbSelector_40335240" href="#" class="sbSelector">Position</a><ul id="sbOptions_40335240" class="sbOptions" style="display: none;"><li><a href="#position" rel="position" class="sbFocus">Position</a></li><li><a href="#name" rel="name">Name</a></li><li><a href="#price" rel="price">Price</a></li><li><a href="#rating" rel="rating">Rating</a></li></ul></div>
+                        </div>
+                    </div>
+                    <div class="pull-left aligncenter hidden-phone">
+                        <label> <span class="hidden-tablet">View as:</span></label>
+                        <a href="#" class="icon-th view-grid active"></a><a href="#" class="icon-th-list view-list"></a>
+                    </div>
+                    @*<div class="pull-right alignright">
+                            <label><span class="hidden-phone">Show:</span></label>
+                            <div class="select_wrapper width3">
+                                <select name="select2" class="custom" tabindex="1" sb="68527996" style="display: none;">
+                                    <option value="1">9</option>
+                                    <option value="2">12</option>
+                                    <option value="3">24</option>
+                                    <option value="4">48</option>
+                                </select><div id="sbHolder_68527996" class="sbHolder" tabindex="1"><a id="sbToggle_68527996" href="#" class="sbToggle"></a><a id="sbSelector_68527996" href="#" class="sbSelector">9</a><ul id="sbOptions_68527996" class="sbOptions" style="display: none;"><li><a href="#1" rel="1" class="sbFocus">9</a></li><li><a href="#2" rel="2">12</a></li><li><a href="#3" rel="3">24</a></li><li><a href="#4" rel="4">48</a></li></ul></div>
+                            </div>
+                            per&nbsp;page
+                        </div>*@
+                </div>
+                <div class="line1"></div>
+                @* phân trang *@
+                @if (ViewBag.TotalPage > 1)
+                {
+                    var pageDisplay = (int)ViewBag.MaxPage;
+                    var totalPage = (int)ViewBag.TotalPage;
+                    var currentPage = (int)ViewBag.PageIndex;
+
+                    var starPageIndex = Math.Max(1, currentPage - pageDisplay / 2);
+                    var endPageIndex = Math.Min(totalPage, currentPage + pageDisplay / 2);
+
+                    var link = "/Product/Index";
+
+                    <div class="listing_header_row2">
+                        <div class="pull-left">Sản phẩm <strong>1</strong> đến <strong>12</strong> của <strong>@ViewBag.TotalRecord</strong> Tổng</div>
+                        <div class="pull-right">
+                            <div class="num">
+                                @if (currentPage > ViewBag.Frist)
+                                {
+                                    <a href="@link?page=@ViewBag.Frist" title="Trang đầu" class="first next btn btn-default btn-lg"><i class="fa fa-angle-double-left"></i>&laquo;</a>
+
+                                    <a href="@link?page=@ViewBag.Prev" title="Trang trước" class="first next btn btn-default btn-lg"><i class="fa fa-angle-left"></i>&lsaquo;</a>
+                                }
+                                @for (int i = starPageIndex; i < endPageIndex; i++)
+                                {
+                                    if (currentPage == i)
+                                    {
+                                        <a href="@link?page=@i" class="btn btn-default  btn-lg active" title="Trang @i">@i</a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@link?page=@i" class="pos  btn btn-default  btn-lg" title="Trang @i">@i</a>
+                                    }
+                                }
+                                @if (currentPage < totalPage)
+                                {
+                                    <a href="@link?page=@ViewBag.Last" title="Trang sau" class="next btn btn-default btn-lg"><i class="fa fa-angle-right"></i>&rsaquo;</a>
+                                    <a href="@link?page=@ViewBag.Next" title="Trang cuối" class="last  btn btn-default btn-lg"><i class="fa fa-angle-double-right"></i>&raquo;</a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+                <h3>Danh sách</h3>
+                <div class="product-listing product-grid">
+                    <div class="row big_with_description isotope-outer isotope" style="position: relative; overflow: hidden; height: 1113px;">
+                        @* hiển thị sản phẩm *@
+                        @if (Model.Count() != 0)
+                        {
+                            foreach (var item in Model)
+                            {
+                                var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
+
+                                <div class="span3 product  isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 371px, 0px);">
+                                    @if (@DateTime.Now.Subtract(item.CreateDate).Days < 7)
+                                    {
+                                        <div class="label_new_top_left">Mới</div>
+                                    }
+
+                                    @if (item.Sale != null)
+                                    {
+                                        <div class="label_sale_top_right">Giảm giá</div>
+                                        <div class="sale_discount img-rounded">-20%</div>
+                                    }
+
+                                    <div class="product-image-wrapper onhover animate scale animated" style="height: 245px;"><a href="@url"><img src="@item.Image" alt="" style="height: 245px; width: 258px;"><img src="@item.Image" class="roll_over_img" alt="" style="height: 245px; width: 258px;"></a> </div>
+                                    <div class="wrapper-hover">
+                                        <div class="product-name"><a href="@url">@item.Name</a>&nbsp;</div>
+                                        <div class="wrapper">
+                                            <span class="sort-rating hidden">4</span>
+                                            @if (item.Price != null && item.Quantity > 1)
+                                            {
+                                                <div class="product-tocart"> <a href="/Cart/AddToCart?productId=@item.ID&quantity=1"><i class="icon-basket"></i></a> </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="product-tocart"></div>
+                                            }
+                                            @if (item.Quantity > 1)
+                                            {
+                                                if (item.Sale == null)
+                                                {
+                                                    <div class="product-price"><span class="sort-price">@(item.Price.HasValue ? item.Price.Value.ToString("N0") + "VND" : "Liên hệ") </span></div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="product-price">
+                                                        <span class="sort-price" style="color: red">@(item.Sale.HasValue ? item.Sale.Value.ToString("N0") + "VND" : "Liên hệ")  </span>
+                                                        <strike style="font-size: 8px;">
+                                                            <span class="sort-price">@(item.Price.HasValue ? item.Price.Value.ToString("N0") + "VND" : "Lien he") </span>
+                                                        </strike>
+
+                                                    </div>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <div class="product-price">
+                                                    <span class="sort-price" style="color: red">Hết hàng</span>
+                                                </div>
+                                            }
+                                            <div class="rating-listing rating"> <strong><a><i class="icon-star-1"></i></a><a><i class="icon-star-1"></i></a><a><i class="icon-star-1"></i></a><a><i class="icon-star-1"></i></a></strong><a><i class="icon-star-empty"></i></a> </div>
+                                        </div>
+                                        <div class="list_description">@item.Description</div>
+                                        <div class="product-buttons listing_buttons">
+                                            @if (item.Price != null && item.Quantity > 1)
+                                            {
+                                                <a href="/Cart/AddToCart?productId=@item.ID&quantity=1" class="button btn-cart"><i class="icon-basket"></i>Thêm vào giỏ hàng</a>
+                                            }
+                                            else
+                                            {
+                                                <a href="#" class="button btn-cart"><i class="icon-basket disable"></i>Add to Cart</a>
+                                            }
+
+                                            <div class="add-to-links">
+                                                <ul>
+                                                    <li> <a href="#" class="small_icon_color"><i class="icon-heart"></i></a><a class="small_icon_color" href="#">Thêm vào danh ưu thích</a></li>
+                                                    <li> <a href="#" class="small_icon_color"><i class="icon-popup"></i></a><a class="small_icon_color" href="#">So sánh</a> </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="preview hidden-tablet hidden-phone" style="top: 381px; left: -45px; display: block;">
+                                    @if (@DateTime.Now.Subtract(item.CreateDate).Days < 7)
+                                    {
+                                        <div class="label_new_top_left">Mới</div>
+                                    }
+
+                                    @if (item.Sale != null)
+                                    {
+                                        <div class="label_sale_top_right">Giảm giá</div>
+                                        <div class="sale_discount img-rounded">-20%</div>
+                                    }
+                                    <div class="wrapper">
+                                        <div class="col-1"><a href="@url" data-rel="@item.Image" class="image"><img src="@item.Image" alt="" class="thumb" style="height: 245px; width: 258px;"></a> <a href="@url" data-rel="@item.Image" class="image"><img src="@item.Image" alt="" class="thumb" style="height: 245px; width: 258px;"></a> <a href="@url" data-rel="@item.Image" class="image"><img src="@item.Image" alt="" class="thumb" style="height: 245px; width: 258px;"></a></div>
+                                        <div class="col-2">
+                                            <div class="big_image" style="height: 245px;"><a href="@url"><img src="@( item.MoreImage.IsEmpty() ? item.Image : item.MoreImage)" style="width: 258px; height: 245px;" alt="" /></a></div>
+                                            <div class="wrapper-hover">
+                                                <div class="product-name"><a href="@url">@item.Name </a></div>
+                                                <div class="wrapper">
+                                                    @if (item.Price != null && item.Quantity > 1)
+                                                    {
+                                                        <div class="product-tocart">
+                                                            <a href="/Cart/AddToCart?productId=@item.ID&quantity=1"><i class="icon-basket"></i></a>
+                                                        </div>
+                                                    }
+                                                    @if (item.Price != null && item.Quantity > 1)
+                                                    {
+                                                        <div class="product-tocart"> <a href="/Cart/AddToCart?productId=@item.ID&quantity=1"><i class="icon-basket"></i></a> </div>
+                                                    }
+                                                    else
+                                                    {
+                                                        <div class="product-tocart"></div>
+                                                    }
+
+                                                    @if (item.Quantity > 1)
+                                                    {
+                                                        if (item.Sale == null)
+                                                        {
+                                                            <div class="product-price"><span class="sort-price">@(item.Price.HasValue ? item.Price.Value.ToString("N0") + "VNĐ" : "Liên hệ") </span></div>
+                                                        }
+                                                        else
+                                                        {
+                                                            <div class="product-price">
+                                                                <span class="sort-price" style="color: red">@(item.Sale.HasValue ? item.Sale.Value.ToString("N0") + "VNĐ" : "Liên hệ")  </span>
+                                                                <strike style="font-size: 8px;">
+                                                                    <span class="sort-price">@(item.Price.HasValue ? item.Price.Value.ToString("N0") + "VNĐ" : "Lien he") </span>
+                                                                </strike>
+
+                                                            </div>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <div class="product-price">
+                                                            <span class="sort-price" style="color: red">Hết hàng</span>
+                                                        </div>
+                                                    }
+
+
+                                                </div>
+                                                <div class="product-link">
+                                                    <a href="#">Thêm vào ưa thích</a> <br>
+                                                    <a href="#">So sánh</a>
+                                                </div>
+                                                <div class="rating"> <strong> <a href="#"><i class="icon-star"></i></a> <a href="#"><i class="icon-star"></i></a> <a href="#"><i class="icon-star"></i></a> <a href="#"><i class="icon-star"></i></a> </strong> <a href="#"><i class="icon-star"></i></a> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                        }
+                        else
+                        {
+                            <div class="alert alert-error alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                <h3>Trống</h3>
+                                Danh mục hiện chưa có bài viết nào.
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+                <div class="listing_header_row1">
+                    <div class="pull-left">
+                        <label>Sắp xếp:</label>
+                        <div class="select_wrapper width1">
+                            <select name="select3" class="custom sort-by" tabindex="1" sb="40335240" style="display: none;">
+                                <option value="position">Vị trí</option>
+                                <option value="name">Tên</option>
+                                <option value="price">Giá</option>
+                                <option value="rating">Đánh giá</option>
+                            </select><div id="sbHolder_40335240" class="sbHolder" style="display: none;" tabindex="1"><a id="sbToggle_40335240" href="#" class="sbToggle"></a><a id="sbSelector_40335240" href="#" class="sbSelector">Position</a><ul id="sbOptions_40335240" class="sbOptions" style="display: none;"><li><a href="#position" rel="position" class="sbFocus">Position</a></li><li><a href="#name" rel="name">Name</a></li><li><a href="#price" rel="price">Price</a></li><li><a href="#rating" rel="rating">Rating</a></li></ul></div>
+                        </div>
+                    </div>
+                    <div class="pull-left aligncenter hidden-phone">
+                        <label> <span class="hidden-tablet">View as:</span></label>
+                        <a href="#" class="icon-th view-grid active"></a><a href="#" class="icon-th-list view-list"></a>
+                    </div>
+
+                </div>
+                <div class="line1"></div>
+                @* phân trang *@
+                @if (ViewBag.TotalPage > 1)
+                {
+                    var pageDisplay = (int)ViewBag.MaxPage;
+                    var totalPage = (int)ViewBag.TotalPage;
+                    var currentPage = (int)ViewBag.PageIndex;
+
+                    var starPageIndex = Math.Max(1, currentPage - pageDisplay / 2);
+                    var endPageIndex = Math.Min(totalPage, currentPage + pageDisplay / 2);
+
+                    var link = "/Product/Index";
+
+                    <div class="listing_header_row2">
+                        <div class="pull-left">Sản phẩm <strong>1</strong> đến <strong>12</strong> của <strong>@ViewBag.TotalRecord</strong> Tổng</div>
+                        <div class="pull-right">
+                            <div class="num">
+                                @if (currentPage > ViewBag.Frist)
+                                {
+                                    <a href="@link?page=@ViewBag.Frist" title="Trang đầu" class="first next btn btn-default btn-lg"><i class="fa fa-angle-double-left"></i>&laquo;</a>
+
+                                    <a href="@link?page=@ViewBag.Prev" title="Trang trước" class="first next btn btn-default btn-lg"><i class="fa fa-angle-left"></i>&lsaquo;</a>
+                                }
+                                @for (int i = starPageIndex; i < endPageIndex; i++)
+                                {
+                                    if (currentPage == i)
+                                    {
+                                        <a href="@link?page=@i" class="btn btn-default  btn-lg active" title="Trang @i">@i</a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@link?page=@i" class="pos  btn btn-default  btn-lg" title="Trang @i">@i</a>
+                                    }
+                                }
+                                @if (currentPage < totalPage)
+                                {
+                                    <a href="@link?page=@ViewBag.Last" title="Trang sau" class="next btn btn-default btn-lg"><i class="fa fa-angle-right"></i>&rsaquo;</a>
+                                    <a href="@link?page=@ViewBag.Next" title="Trang cuối" class="last  btn btn-default btn-lg"><i class="fa fa-angle-double-right"></i>&raquo;</a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="span3" id="column_left">
+                <div class="row">
+                    <div class="span3">
+                        <div class="block_listing">
+                            <div class="block block-layered-nav">
+                                <div class="block-title"><strong><span>Danh mục sản phẩm</span></strong></div>
+                                <div class="block-content">
+                                    <div id="category_menu">
+                                        @* menu *@
+                                        @{Html.RenderAction("_Category", "Product");}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="block">
+                            <div class="block-title"><strong><span>Giá</span></strong></div>
+                            <div class="block-content">
+                                <div id="price_slider_wrapper">
+                                    <div id="noUiSlider" class="noUiSlider" style="position: relative;"><div class="noUi-handle noUi-lowerHandle" style="position: absolute; left: 0px; z-index: 1;"><div><span class="infoBox">0VNĐ</span></div></div><div class="noUi-midBar" style="position: absolute; left: 0px; right: 102px;"></div><div class="noUi-handle noUi-upperHandle" style="position: absolute; left: 68px; z-index: 2;"><div><span class="infoBox">800000VNĐ</span></div></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <div class="block-title"><strong><span>Thẻ TAGS</span></strong></div>
+                            <div class="block-content"><img src="~/Assets/Client/img/tag_cloud.png" width="256" height="153" alt=""></div>
+                        </div>
+                        <div class="block">
+                            <div class="block-title"><strong><span>So Sánh</span></strong></div>
+                            <div class="block-content">Bạn chưa có sản phẩm nào so sánh.</div>
+                        </div>
+
+                    </div>
+                    <div class="span3">
+                        <div class="banners_outer">
+                            <div class="flexslider banners">
+
+                                <div class="flex-viewport" style="overflow: hidden; position: relative;">
+                                    <ul class="slides" style="width: 1000%; transition-duration: 0.6s; transform: translate3d(-768px, 0px, 0px);">
+
+                                        @foreach (var item in ViewBag.slideButtom)
+                                        {
+                                            <li class="clone" aria-hidden="true" style="width: 256px; float: left; display: block;"> <a href="/Product/Index"><img src="@item.Image" alt="" draggable="false"></a> </li>
+                                        }
+                                    </ul>
+                                </div><ul class="flex-direction-nav"><li><a class="flex-prev" href="#"><i class="icon-left-thin"></i></a></li><li><a class="flex-next" href="#"><i class="icon-right-thin"></i></a></li></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

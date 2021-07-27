@@ -1,0 +1,63 @@
+/*
+ Cloud Zoom CSS. (c)2012-2013 Star Plugins.
+*/
+
+/* CSS for lens */
+.cloudzoom-lens {
+	border: 2px solid #888;
+	background-color:#fff;	
+    width:100px;
+    height:100px;
+    box-shadow: -0px -0px 10px rgba(0,0,0,0.40);
+    cursor:crosshair;
+    z-index: 10;
+}
+
+/* CSS for zoom window. */
+.cloudzoom-zoom {
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	background-color:#fff;
+	-webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.27);
+	-moz-box-shadow:    0px 0px 4px rgba(0, 0, 0, 0.27);
+	box-shadow:         0px 0px 4px rgba(0, 0, 0, 0.27);
+	overflow:hidden;
+	margin: -8px 0 0 15px;
+	padding: 0;
+	border: 9px solid #fff;
+	border-bottom: 8px solid #fff;
+}
+/* CSS for zoom window in 'inside' mode. */
+.cloudzoom-zoom-inside {
+    border:none;
+    box-shadow:none;
+}
+
+/* CSS for captions */
+.cloudzoom-caption {
+    display:none;   /* CSS captions should be hidden initially */
+    text-align: left;
+    background-color:#000;
+    color:#fff;
+    font-weight:bold;
+    padding:10px;
+    font-family: sans-serif;
+    font-size:11px;
+}
+
+/* A blank image */
+.cloudzoom-blank {
+    background-image:url(../img/blank.png);
+}
+
+/* The animated ajax loading image */
+.cloudzoom-ajax-loader {
+    background-image:url(../img/ajax-loader.gif);
+    width:32px;
+    height:32px;
+}
+@media (max-width: 767px) { 
+	.cloudzoom-lens, .cloudzoom-zoom  { display: none !important;}
+	.cloudzoom-blank, .cloudzoom-blank > div:first-child { background: transparent !important;}
+}

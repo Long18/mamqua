@@ -1,0 +1,9 @@
+﻿@model IEnumerable<ProjectMamQua.EF.ContentCategory>
+
+<ul class="categories">
+    @foreach (var item in Model)
+    {
+        <li><i class="icon-right-open"></i><a href="/bai-viet/danh-muc/@item.MetaTitle-@item.ID">@item.Name</a></li>
+    }
+</ul>
+

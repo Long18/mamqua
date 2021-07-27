@@ -1,0 +1,161 @@
+﻿@model ProjectMamQua.EF.FeedBack
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+    #map {
+        height: 400px;
+        width: 720px;
+    }
+</style>
+@section Script
+{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.62/jquery.inputmask.bundle.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHcEGH3z_DKhJVLSjM8zmAyCKviy9CtH8&callback=initMap">
+    </script>
+    <script>
+
+        // This example displays a marker at the center of Australia.
+        // When the user clicks the marker, an info window opens.
+
+        function initMap() {
+            var uluru = { lat: 10.9724745, lng: 106.8872306 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: uluru
+            });
+
+            var contentString = '<div id="content">' +
+                '<div id="siteNotice">' +
+                '</div>' +
+                '<h1 id="firstHeading" class="firstHeading">Mâm Quả Cưới Hỏi Thảo Quyên</h1>' +
+                '<div id="bodyContent">' +
+                '<p><b>Dịch Vụ Mâm Quả Cưới Hỏi</b>' +
+                '<p>Facebook: Mâm Quả Cưới Hỏi, <a href="https://www.facebook.com/mamqua.thaoquyen">' +
+                'Click vô đây để qua Facebook  ' +
+                '</div>' +
+                '</div>';
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+                title: 'Uluru (Ayers Rock)'
+            });
+            marker.addListener('click', function () {
+                infowindow.open(map, marker);
+            });
+        }
+        //  google.maps.event.addDomListener(window, 'load', initMap);
+    </script>
+
+    <script>
+        $(window).load(function () {
+            var phones = [{ "mask": "(###) ###-####" }, { "mask": "(###) ###-#####" }];
+            $('#txtPhone').inputmask({
+                mask: phones,
+                greedy: false,
+                definitions: { '#': { validator: "[0-9]", cardinality: 1 } }
+            });
+        });
+    </script>
+}
+
+<section id="content">
+    <div class="container top">
+        <div class="row">
+            <div class="span12">
+                <div class="wrapper">
+                    <h2 class="nopadding">PHẢN HỒI</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <div class="wrapper">
+                    @if (TempData["Error"] != null) //kiểm tra thông báo để hiển thị
+                    {
+                        <div class="alert alert-error alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <h3>Thất bại</h3>
+                            @TempData["Error"]
+                        </div>
+                        
+                    }
+                    else if (TempData["Success"] != null)
+                    {
+                        <div class="alert alert-success alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <h3>Thành công</h3>
+                            @TempData["Success"]
+                        </div>
+
+                    }
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <div class="span4">
+                @using (Html.BeginForm("Create", "FeedBack", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="box-wrapper">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="promo-box style3">
+                            <p>Tên *</p>
+                            @Html.TextBoxFor(model => model.Name, new { @required = "true", @class = "input-xlarge" })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+                            <p>Email *</p>
+                            @Html.TextBoxFor(model => model.Email, new { @required = "true", @class = "input-xlarge" })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+                            <p>SĐT *</p>
+                            @Html.TextBoxFor(model => model.Phone, new { @required = "true", @class = "input-xlarge", @id = "txtPhone" })
+                            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+
+                            <p>Địa chỉ *</p>
+                            @Html.TextAreaFor(model => model.Address, new { @required = "true", @class = "input-xlarge" })
+                            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+
+
+                            <p>Nội dung *</p>
+                            @Html.TextAreaFor(model => model.Content, new { @class = "input-xlarge" })
+                            @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+
+
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="inside">
+                        <div class="wrapper">
+
+                            <div class="pull-right">
+                                <button type="submit" class="button button-2x">Gửi</button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="span8">
+                <div class="box-wrapper">
+                    <div class="promo-box style3">
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

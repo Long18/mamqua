@@ -1,0 +1,135 @@
+﻿@model IEnumerable<ProjectSEM3.Models.ProductModel>
+
+
+<div class="product_outer carousel_items">
+    @foreach (var item in Model)
+    {
+        var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
+
+        <div class="span3 product carousel_item">
+            @if (DateTime.Now.Subtract(item.CreateDate).Days < 7)
+            {
+                <div class="label_new_top_left">Mới</div>
+            }
+            @if (item.Sale != null)
+            {
+                <div class="label_sale_top_right">Giảm giá</div>
+                <div class="sale_discount img-rounded">-20%</div>
+            }
+            <div class="product-image-wrapper onhover animate scale">
+                <a href="@url"><img src="@item.Image" style="width: 258px; height: 245px;" alt=""></a>
+            </div>
+            <div class="wrapper-hover">
+                <div class="product-name">
+                    <a href="@url">@item.Name</a>
+                </div>
+                <div class="wrapper">
+                    <span class="sort-rating hidden">10</span>
+                    @if (item.Price != null && item.Quantity > 1)
+                    {
+                        <div class="product-tocart">
+                            <a href="/Cart/AddToCart?productId=@item.ID&quantity=1"><i class="icon-basket"></i></a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="product-tocart"></div>
+                    }
+
+                    @if (item.Quantity > 4)
+                    {
+                       
+                        if (item.Sale == null)
+                        {
+                            <div class="product-price"><span class="sort-price">@(item.Price.HasValue ? item.Price.Value.ToString("N0") + "VND" : "Lien he") </span></div>
+                        }
+                        else
+                        {
+                            <div class="product-price">
+                                <span class="sort-price" style="color: red">@(item.Sale.HasValue ? item.Sale.Value.ToString("N0") + "VND" : "Lien he")  </span>
+                                <strike style="font-size: 8px;">
+                                    <span class="sort-price">@(item.Price.HasValue ? item.Price.Value.ToString("N0") + "VND" : "Lien he") </span>
+                                </strike>
+
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="product-price">
+                            <span class="sort-price" style="color: red">Hết hàng</span>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="preview hidden-tablet hidden-phone">
+            @if (DateTime.Now.Subtract(item.CreateDate).Days < 7)
+            {
+                <div class="label_new_top_left">Mới</div>
+            }
+            @if (item.Sale != null)
+            {
+                <div class="label_sale_top_right">Giảm giá</div>
+                <div class="sale_discount img-rounded">-20%</div>
+            }
+            <div class="wrapper">
+                <div class="col-1">
+                    <a href="#" data-rel="~/Assets/Client/img/sport/preview_big_img1.jpg" class="image"><img src="~/Assets/Client/img/sport/preview_big_img1.jpg" alt="" class="thumb" /></a> <a href="#" data-rel="~/Assets/Client/img/sport/preview_big_img2.jpg" class="image"><img src="~/Assets/Client/img/sport/preview_big_img2.jpg" alt="" class="thumb" /></a> <a href="#" data-rel="~/Assets/Client/img/sport/preview_big_img3.jpg" class="image"><img src="~/Assets/Client/img/sport/preview_big_img3.jpg" alt="" class="thumb" /></a>
+                </div>
+                <div class="col-2">
+                    <div class="big_image">
+                        <a href="@url"><img src="@( item.MoreImage.IsEmpty() ? item.Image : item.MoreImage)" style="width: 258px; height: 245px;" alt="" /></a>
+                    </div>
+                    <div class="wrapper-hover">
+                        <div class="product-name">
+                            <a href="@url">@item.Name</a>
+                        </div>
+                        <div class="wrapper">
+                            <span class="sort-rating hidden">10</span>
+                            @if (item.Price != null && item.Quantity > 1)
+                            {
+                                <div class="product-tocart">
+                                    <a href="/Cart/AddToCart?productId=@item.ID&quantity=1"><i class="icon-basket"></i></a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="product-tocart"></div>
+                            }
+
+                            @if (item.Quantity > 4)
+                            {
+                                if (item.Sale == null)
+                                {
+                                    <div class="product-price"><span class="sort-price">@(item.Price.HasValue ? item.Price.Value.ToString("N0") + "VND" : "Lien he") </span></div>
+                                }
+                                else
+                                {
+                                    <div class="product-price">
+                                        <span class="sort-price" style="color: red">@(item.Sale.HasValue ? item.Sale.Value.ToString("N0") + "VND" : "Lien he")  </span>
+                                        <strike style="font-size: 8px;">
+                                            <span class="sort-price">@(item.Price.HasValue ? item.Price.Value.ToString("N0") + "VND" : "Lien he") </span>
+                                        </strike>
+
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="product-price">
+                                    <span class="sort-price" style="color: red">Hết hàng</span>
+                                </div>
+                            }
+                        </div>
+
+                        <div class="rating">
+                            <strong> <a href="#"><i class="icon-star"></i></a> <a href="#"><i class="icon-star"></i></a> <a href="#"><i class="icon-star"></i></a> <a href="#"><i class="icon-star"></i></a> </strong> <a href="#"><i class="icon-star"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

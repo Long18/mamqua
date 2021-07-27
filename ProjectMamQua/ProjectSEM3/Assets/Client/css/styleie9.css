@@ -1,0 +1,41 @@
+.custom_blocks .box .icon_circle i {
+	padding-top:2px;
+}
+.custom_blocks .box:hover .icon_circle i {
+	padding-top:3px;
+}
+#nav li ul.shadow, #nav li .menu_custom_block .shadow {
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+#nav .category_desc_in_menu img, .custom_menu_img img {
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+}
+#header.header_v_2 .line_header_bot {
+	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.15);
+}
+#header.header_v_2 .fadelink .ul_wrapper ul {
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+}
+section#content > .container.top {
+	box-shadow: 0 -5px 5px -4px rgba(0, 0, 0, 0.15);
+}
+.flexslider.big {
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+	margin-top:-1px;
+}
+#layerslider-container-fw {
+	margin-top:-1px;
+}
+.button_small span, .button_small i {
+	padding-top:1px;}
+
+#topline .fadelink > a { padding-top:1px; line-height:16px;}
+
+.flexslider.more-views .flex-viewport {
+	margin-top:-1px;
+}
+.flexslider.more-views .flex-viewport li img {
+	margin-top:1px;
+}
+
+

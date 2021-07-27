@@ -1,0 +1,365 @@
+﻿
+
+@{
+    if (Session["username"] == null && Session["avatar"] == null)
+    {
+        Response.Redirect("/Admin/Login/Index");
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Administranstor </title>
+    @Styles.Render("~/Assets/Admin/css")
+    @Styles.Render("~/Assets/Admin/cssdatepicker")
+</head>
+<body class="nav-md" onload="preloader()">
+
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                @* left menu *@
+
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="/Admin" class="site_title"><i class="fa fa-recycle"></i> <span>Trang quản trị</span></a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <!-- menu profile quick info -->
+                    <div class="profile clearfix">
+                        <div class="profile_pic">
+                            <img src="@Session["avatar"]" alt="Avatar user" width="56px" height="56px" class="image img-circle profile_img">
+                        </div>
+                        <div class="profile_info ">
+                            <span>Xin chào</span>
+                            <h2>@Session["username"]</h2>
+                        </div>
+                    </div>
+                    <!-- /menu profile quick info -->
+
+                    <br />
+
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>Danh mục quản lý</h3>
+                            <ul class="nav side-menu">
+                                <li>
+                                    <a><i class="fa fa-home"></i> Trang chủ <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/Admin">Trang chính</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-dropbox"></i> Sản phẩm <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/Admin/Product/Index">Danh sách</a></li>
+                                        <li><a href="/Admin/Product/Create">Thêm mới</a></li>
+                                        <li><a href="/Admin/Product/RecycelBin">Xóa tạm</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-user"></i> Tài khoản <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/Admin/User/Index">Danh sách</a></li>
+                                        <li><a href="/Admin/User/Create">Thêm mới</a></li>
+                                        <li><a href="/Admin/User/RecycelBin">Xóa tạm</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-newspaper-o"></i> Bài viết <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/Admin/Content/Index">Danh sách</a></li>
+                                        <li><a href="/Admin/Content/Create">Thêm mới</a></li>
+                                        <li><a href="/Admin/Content/RecycelBin">Xóa tạm</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-picture-o"></i> Slide hình ảnh <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/Admin/Slide/Index">Danh sách</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-users"></i> Nhóm quyền tài khoản <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/Admin/GroupUser/Index">Danh sách</a></li>
+                                        <li><a href="/Admin/GroupUser/RecycelBin">Xóa tạm</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a><i class="fa fa-envelope"></i>Feed Back <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/Admin/Feedback/Index">Danh sách</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-shopping-cart "></i>Đơn đặt hàng <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/Admin/Order/Index">Danh sách</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-sitemap"></i> Danh mục<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li>
+                                            <a>Danh mục bài viết<span class="fa fa-chevron-down"></span></a>
+                                            <ul class="nav child_menu">
+                                                <li class="sub_menu">
+                                                    <a href="/Admin/ContentCategory/Index">Danh sách</a>
+                                                </li>
+                                              
+                                                <li>
+                                                    <a href="/Admin/ContentCategory/RecycelBin">Xóa tạm</a>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+
+
+                                        <li>
+                                            <a>Danh mục sản phẩm<span class="fa fa-chevron-down"></span></a>
+                                            <ul class="nav child_menu">
+                                                <li class="sub_menu">
+                                                    <a href="/Admin/ProductCategory/Index">Danh sách</a>
+                                                </li>
+                                           
+                                                <li>
+                                                    <a href="/Admin/ProductCategory/RecycelBin">Xóa tạm</a>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a>Loại Thành Phần<span class="fa fa-chevron-down"></span></a>
+                                            <ul class="nav child_menu">
+                                                <li class="sub_menu">
+                                                    <a href="/Admin/Producer/Index">Danh sách</a>
+                                                </li>
+                                           
+                                                <li>
+                                                    <a href="/Admin/Producer/RecycelBin">Xóa tạm</a>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                    <!-- /sidebar menu -->
+                    <!-- /menu footer buttons -->
+                    <div class="sidebar-footer hidden-small">
+                        <a data-toggle="tooltip" data-placement="top" title="Settings">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Lock">
+                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Đăng xuất" href="/Admin/Login/Logout">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <!-- /menu footer buttons -->
+                </div>
+                @* end left menu *@
+            </div>
+
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="@Session["avatar"]" alt="">@Session["username"]
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a href="/Admin/User/UserProfile/@Session["userID"]"> Hồ sơ</a></li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="badge bg-red pull-right">50%</span>
+                                            <span>Cài đặt</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="/Admin/Login/ChangePassword"><i class="fa fa-arrow-circle-o-right pull-right"></i>Đổi mật khẩu</a></li>
+                                    <li><a href="/Admin/Login/Logout"><i class="fa fa-sign-out pull-right"></i> Đăng xuất</a></li>
+                                </ul>
+                            </li>
+
+
+                            <li role="presentation" class="dropdown">
+                                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-envelope-o"></i>
+                                    <span class="badge bg-green">6</span>
+                                </a>
+                                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                                    <li>
+                                        <a>
+                                            <span class="image"><img src="@Session["avatar"]" alt="avatar" /></span>
+                                            <span>
+                                                <span>John Smith</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span class="image"><img src="~/Assets/Admin/images/img.jpg" alt="Profile Image" /></span>
+                                            <span>
+                                                <span>John Smith</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span class="image"><img src="~/Assets/Admin/images/img.jpg" alt="Profile Image" /></span>
+                                            <span>
+                                                <span>John Smith</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span class="image"><img src="~/Assets/Admin/images/img.jpg" alt="Profile Image" /></span>
+                                            <span>
+                                                <span>John Smith</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="text-center">
+                                            <a>
+                                                <strong>See All Alerts</strong>
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>    
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="/Admin/Business/Index" class="bold_brown_text">
+                                    <span class="fa fa-cogs text-danger"></span>
+                                    <span > Quản lí nghiệp vụ </span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <!-- top tiles -->  
+
+                @RenderBody()
+            </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    Trang quản trị Coyright-@DateTime.Now.ToString("yyyy")
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+        </div>
+    </div>
+
+    @Scripts.Render("~/Assets/Admin/js")
+    @Scripts.Render("~/Assets/Admin/datepicker")
+
+
+    <!-- alertyfly -->
+
+    @if (@TempData["Success"] != null)
+    {
+        <script>
+            Lobibox.notify('success', {
+                size: 'mini',
+                rounded: true,
+                sound: false,
+                delayIndicator: false,
+                msg: '@TempData["Success"]'
+            });
+        </script>
+    }
+    else if (@TempData["Error"] != null)
+    {
+        <script>
+            Lobibox.notify('error', {
+                size: 'mini',
+                rounded: true,
+                sound: false,
+                delayIndicator: false,
+                msg: '@TempData["Error"]'
+            });
+
+        </script>
+    }
+
+
+
+
+
+    <!-- end alertyfly-->
+    @RenderSection("Script", required: false)
+
+    <div id="progress" class="loadingModel">
+        <div class="centerloadingModel">
+            <img src="~/Assets/Admin/images/Preloader_3.gif" />
+        </div>
+    </div>
+    @* preloading *@
+    <header class="entry-header"></header>
+
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+    </div>
+    @* end preloading *@
+</body>
+</html>

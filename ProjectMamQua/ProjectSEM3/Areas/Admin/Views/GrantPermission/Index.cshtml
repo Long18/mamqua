@@ -1,0 +1,130 @@
+﻿@using System.Collections
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section Script
+{
+    <script src="~/Assets/Admin/GrantPermissionController.js"></script>
+    <script>
+        //lấy danh sách các pêr
+        function GetPermissions(groupUserID) {
+            var id = $('#businessController').val();
+            $.ajax({
+                type: 'GET',
+                url: '/Admin/GrantPermission/GetPermission',
+                data: { groupUserID: groupUserID, id: id },
+                success: function (response) {
+                    $('#listAction').html('');
+                    $.each(response, function (index, value) {
+                        if (value.IsGranted) { //kiểm tra là đang được cấp quyền thì add
+                            $('#listAction').append("<input type='checkbox' class='flat'  checked onchange='UpdatePermission(" +
+                                "this.value," + @Session["groupUserID"] + ")' " +
+                                "value='" + value.PermissionID + "'> " + value.Desciption + "<br/>");
+                        } else {
+                            $('#listAction').append("<input type='checkbox' class='flat'  onchange='UpdatePermission(" +
+                                "this.value," +  @Session["groupUserID"] + ")' " +
+                                "value='" + value.PermissionID + "'> " + value.Desciption + "<br/>");
+                        }
+                    });
+                }
+            });
+        }
+        function UpdatePermission(id, groupUserID) {
+
+            $.ajax({
+                type: 'POST',
+                url: '/Admin/GrantPermission/UpdatePermission',
+                data: { groupUserID: groupUserID, id: id },
+                success: function (response) {
+                    if (response.status == true) {
+                        alertify.success("Bạn đã cấp quyền này");
+                    } else {
+                        alertify.warning("Bạn đã hủy quyền này");
+                    }
+                }
+            });
+        }
+
+        $(document).ajaxStart(function () {
+            $('.loadingModel').show();
+        });
+        $(document).ajaxStop(function () {
+            $('.loadingModel').hide();
+        });
+
+        $(function () {
+            $(document).tooltip();
+        });
+    </script>
+}
+
+
+<div class="x_content">
+    <div class="">
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+
+                        <h2>Cập nhập quyền cho  :<span style="color: red">@ViewBag.userGrant</span> </h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li>
+                                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="#">Settings 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Settings 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <a href="/Admin/GroupUser/Index/" class="btn btn-default">
+                        <img src="~/Assets/Admin/images/Arrow-prevoius-2-icon.png" width="30px" title="Click vào đây để quay lại trang quyền tài khoản" height="30px" />
+                    </a>
+                    <div class="x_content">
+                        <div class="container">
+                            <div class="row">
+
+                                <div class="col-sm-6">
+                                    <fieldset>
+                                        <legend>Chọn danh mục cần quản lí</legend>
+                                        @Html.DropDownList("businessController", (IEnumerable<SelectListItem>)ViewBag.items, "---Chọ mục---",
+                                        new { onchange = "GetPermissions(" + Session["groupUserID"] + ")", @class = "form-control col-md-6 col-xs-6 col-sm-6" })
+                                    </fieldset>
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <fieldset>
+                                        <legend>Danh sách quyền</legend>
+                                        <blockquote>
+                                            <div id="listAction" class="blockquote">
+                                                Chưa có mục nào được chọn
+                                            </div>
+                                        </blockquote>
+                                      
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

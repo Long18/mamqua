@@ -1,0 +1,73 @@
+/*********************************************
+	-	SETTINGS FOR BANNER CONTAINERS	-
+**********************************************/
+
+.tp-banner-container {
+	width:100%;
+	position:relative;
+	padding:0;
+}
+.tp-banner {
+	width:100%;
+	position:relative;
+}
+.tp-banner-fullscreen-container {
+	width:100%;
+	position:relative;
+	padding:0;
+}
+.tp-leftarrow.default, .tp-rightarrow.default {
+	display:block;
+	cursor:pointer;
+	width:59px;
+	height: 61px;
+	background:#FFF;
+	color:#ff0000;
+	text-align:center;
+}
+.tp-leftarrow.default:before, .tp-rightarrow.default:before {
+ 	font-family: 'andepict';
+	font-size:30px;
+	line-height:64px;
+	content:'\2190';
+	margin: 0 4px 0 0
+
+}
+.tp-rightarrow.default:before {
+	content:'\2192';
+	margin: 0 0 0 2px
+}
+.tp-leftarrow:hover, .tp-rightarrow:hover {
+	background-position:bottom left;
+}
+.text1 {
+	font: bold 59px/1em 	'Sintony', sans-serif;
+	color:#ff0000;
+	text-transform:uppercase;
+}
+.text2 {
+	font: bold 25px/1em 	'Sintony', sans-serif;
+	color:#3a3a3a;
+	text-transform:uppercase;
+}
+.text3 {
+	font: normal 19px/1em 	'Sintony', sans-serif;
+	color:#3a3a3a;
+	text-transform:uppercase;
+}
+.text4 {
+	font: normal 26px/1em 	'Sintony', sans-serif;
+	color:#3a3a3a;
+	text-transform:uppercase;
+}
+.text5 {
+	font: bold 59px/1em 	'Sintony', sans-serif;
+	color:#ff0000;
+	text-transform:uppercase;
+}
+.text6 {
+	font: normal 22px/1em 	'Sintony', sans-serif;
+	color:#3a3a3a;
+	text-transform:uppercase;
+}
+

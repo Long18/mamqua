@@ -1,0 +1,54 @@
+.noUiSlider {
+	width:					170px;
+	height:					3px;
+	border: 1px solid #dadada;
+	background: #f1f1f1;
+	-webkit-touch-callout:	none;
+	margin-bottom:25px;
+}
+.noUi-midBar {
+	height:					100%;
+	z-index:				0;
+	border: 1px solid #6f6f6f;
+	background: #6f6f6f;
+	-webkit-touch-callout:	none;
+}
+.noUi-handle > div {
+	position:				absolute;
+	width:					16px;
+	height:					16px;
+	top:					-6px;
+	left:					-8px;
+	z-index: 				5;
+	width: 20px;
+	height: 18px;
+	background: url(../img/slider-handle.png) no-repeat;
+	cursor: pointer
+}
+.touch .noUi-handle > div {
+	top: -6px;
+}
+
+.noUi-handle > div:hover,
+.noUi-handle > div.noUi-activeHandle {
+}
+.disabled > .noUi-midBar {
+	background:				#999;
+}
+.disabled .noUi-handle > div {
+	border-color:			#CCC;
+	background:				#CCC;
+}
+.noUi-handle .infoBox {
+    bottom: -20px;
+    display: block;
+    position: relative;
+}
+@media (-webkit-min-device-pixel-ratio:1.2),-moz-touch-enabled,(max-device-width:1024px){
+	.noUi-handle > div {
+		height:				32px;
+		width:				32px;
+		top:				-13px;
+		left:				-16px;
+	}
+}

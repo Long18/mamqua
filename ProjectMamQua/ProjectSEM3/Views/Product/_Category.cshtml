@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ProjectMamQua.EF.Producer>
+
+
+<ul id="collapsed-menu">
+    <li class="level0 nav-1 first parent active">
+        <label class="tree-toggler nav-header closed "> <a href="#">Mâm Quả</a><span class="collapse_button">+</span><span class="collapse_button">+</span></label>
+        <ul class="nav nav-list tree" style="display: block;">
+            @foreach (var item in Model)
+            {
+                <li class="level1 nav-1-1 active first parent">
+                    <label class="tree-toggler nav-header closed"> <a href="/Product/@item.MetaTitle-@item.ID">@item.Name</a><span class="collapse_button">+</span></label>
+                </li>
+            }
+            
+
+        </ul>
+    </li>
+
+    <li class="level0 nav-3 last parent">
+        <label class="tree-toggler nav-header closed"> <a href="#">Lễ Tân</a><span class="collapse_button">+</span><span class="collapse_button">+</span></label>
+        <ul class="nav nav-list tree">
+            @foreach (var item in Model)
+            {
+                <li class="level1 nav-1-1 active first parent">
+                    <label class="tree-toggler nav-header closed"> <a href="/Product/@item.MetaTitle-@item.ID">@item.Name</a><span class="collapse_button">+</span></label>
+                </li>
+            }
+        
+        </ul>
+    </li>
+</ul>

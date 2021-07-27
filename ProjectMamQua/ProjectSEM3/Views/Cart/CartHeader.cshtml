@@ -1,0 +1,55 @@
+﻿@model List<ProjectSEM3.Models.CartItem>
+@section Script
+    {
+    <script src="~/Assets/Client/CartController.js"></script>
+
+}
+<div class="shoppingcart">
+    <div class="fadelink">
+        <span class="pull-right"> <a href="/Cart" class="btn"><i class="icon-basket icon-large"></i></a> </span><span class="badge">@Model.Count</span>
+        <div class="shopping_cart_mini hidden-phone hidden-tablet">
+            <div class="inner-wrapper">
+                @if (Model.Count > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        <div class="item">
+                            <a href="/chi-tiet/@item.ProductModel.MetaTitle-@item.ProductModel.ID" class="product-image"><img src="@item.ProductModel.Image" width="50px" height="50px" alt=""></a>
+                            <div class="product-detailes">
+                                <a href="#" class="product-name">@item.ProductModel.Name </a>
+                                <div class="product-price">
+                                    @item.Quantity x
+                                    @if (item.ProductModel.Sale != null)
+                                    {
+                                        @item.ProductModel.Sale.GetValueOrDefault(0).ToString("N0")<span> VNĐ</span>
+                                        <strike style="color: red">@item.ProductModel.Price.GetValueOrDefault(0).ToString("N0")</strike>
+                                    }
+                                    else
+                                    {
+                                        @item.ProductModel.Price.GetValueOrDefault(0).ToString("N0")
+                                        <span> VNĐ</span>
+                                    }
+                                </div>
+                            </div>
+                            <div class="alignright">
+                                <a href="#" data-id="@item.ProductModel.ID" class="btnDelete"><i class="icon-trash-3"></i></a>
+                            </div>
+                        </div>
+
+                    }
+                    <div class="wrapper">
+                        <a href="/Cart" class="button">Xem tất cả</a>
+                        <a href="/Cart/Payment" class="button">Thanh toán</a>
+                    </div>
+                }
+                else
+                {
+                    <span>Chưa có sản phẩm nào trong giỏ hàng</span>
+                }
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

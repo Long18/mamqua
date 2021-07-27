@@ -1,0 +1,41 @@
+.custom_color, a .custom_color, .flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover, .flex-direction-nav a, h4 [class^="icon-"], h4 [class*=" icon-"], .nav-list li li a:hover, #topline a, .product .product-tocart a, .preview [class^="icon-"], .preview [class^="icon-"], .twit a, .twit .icon, .form-login button i, #header.header_v_2 #nav.megamenu li.level1 > a:hover, .nav-list [class^="icon-"]:hover {
+ color: #4ac7cd !important;
+}
+.nav-list .nav-header>a [class^="icon-"], .nav-list .nav-header>a [class^="icon-"]:hover {
+color:#fff !important;
+}
+a.btn, .loader-slider, .nav-header > a, .nav-list > li > a:hover, button, .form-search button, .form-mail button, .shoppingcart .fadelink span a, .shopping_cart_mini .button:hover, a.small_icon_color i, .middle_icon_color, .nav-tabs > li > a:hover, .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .direction-nav a:hover, .es-nav a.btn:hover,.countdown_inner, .sale_discount,.jcarousel-skin-brands a.btn:hover {
+	background-color:#4ac7cd;
+}
+a.btn:hover, button:hover, .form-search button.btn:hover, .form-mail button.btn:hover, .shoppingcart:hover .fadelink span a, a.small_icon_color:hover i, button:hover, .form-search button.btn:hover, .form-mail button.btn:hover, .shoppingcart:hover .fadelink span a, a.small_icon_color:hover i {
+	background-color:#38979c;
+}
+.style2 .es-nav, .custom_blocks .box .inside, .tab-content {
+	border-color:#4ac7cd;
+}
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+	border-color:#BCEBED;
+}
+#bottom_block {
+	background: url(../img/body_v4_bg.jpg) repeat 0 0 #333;
+	padding: 25px 0;
+	margin-bottom: -70px;
+}
+#bottom_block, #bottom_block a {
+	color:#9a9a9a;
+}
+#bottom_block h2, #bottom_block strong, #bottom_block ul.icons [class^="icon-"], #bottom_block ul.icons [class*=" icon-"] {
+color:#fff;
+}
+.loader-slider1 {
+	background-color:#4ac7cd;
+}
+.middle_icon_color1 {
+	background-color:#4ac7cd;
+}
+a.btn1 {
+	background-color:#4ac7cd;
+}
+#header .nav-list {
+	margin-bottom: 25px;
+}

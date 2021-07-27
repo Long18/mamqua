@@ -1,0 +1,155 @@
+.select_wrapper { display:inline-block;  padding-right:10px;}
+.select_wrapper.width1 { width:100px;}
+.select_wrapper.width3 { width:55px;}
+.select_wrapper.fullwidth { width:98%;}
+.sbHolder{
+	background-color: #fff;
+	border: solid 1px #cfcfcf;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	height: 22px;
+	position: relative;
+	z-index:3001;
+	width: 100%;
+	text-align:left;
+}
+.select_wrapper.fullwidth .sbHolder{
+	border-radius: 3px;
+	box-shadow:         0px 0px 4px rgba(0, 0, 0, 0.27);
+	background-color: #fff;
+	border: none;
+	font-size: 14px;
+	font-weight: normal;
+	height: 34px;
+	position: relative;
+	z-index:auto;
+	width: 100%;
+	text-align:left;
+	margin-bottom:10px;
+}
+.sbSelector{
+	display: block;
+	height: 22px;
+	left: 0;
+	line-height: 22px;
+	outline: none;
+	overflow: hidden;
+	position: absolute;
+	text-indent: 10px;
+	top: 0;
+	width:  100%;
+}
+.sbSelector:link, .sbSelector:visited, .sbSelector:hover{
+	color: #000;
+	outline: none;
+	text-decoration: none;
+}
+.select_wrapper.fullwidth .sbSelector {
+	height: 32px;
+	line-height: 32px;
+}
+.select_wrapper.fullwidth .sbSelector:link, .select_wrapper.fullwidth .sbSelector:visited, .select_wrapper.fullwidth .sbSelector:hover{
+	color: #555555;
+	outline: none;
+	line-height:34px;
+	text-decoration: none;
+}
+.sbToggle{
+	background: url(../img/select-icons.png) 0 0 no-repeat #f6f6f6;
+	display: block;
+	height: 18px;
+	outline: none;
+	position: absolute;
+	right: 2px;
+	top: 2px;
+	width: 18px;
+}
+.select_wrapper.fullwidth .sbToggle{
+	background: url(../img/select-icons-big.png) 0 0 no-repeat #f6f6f6;
+	display: block;
+	height: 28px;
+	width: 29px;
+}
+
+.sbToggle:hover{
+	background: url(../img/select-icons.png) 0 -18px no-repeat #f6f6f6;
+}
+.sbToggleOpen{
+	background: url(../img/select-icons.png) 0 -36px no-repeat #f6f6f6;
+}
+.sbToggleOpen:hover{
+	background: url(../img/select-icons.png) 0 -54px no-repeat #f6f6f6;
+}
+.sbHolderDisabled{
+	background-color: #3C3C3C;
+}
+.sbHolderDisabled .sbHolder{
+	
+}
+.sbHolderDisabled .sbToggle{
+	
+}
+.sbOptions{
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-top: none;
+	list-style: none;
+	left: -1px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 22px;
+	width: 100%;
+	z-index: 1;
+	overflow-y: auto;
+}
+.select_wrapper.fullwidth .sbOptions{
+	background-color: #fff;
+	border: 1px solid #eaeaea;
+	height: 180px;
+}
+
+.sbOptions li{
+	padding: 0 7px;
+}
+.sbOptions a {
+	border-bottom: dotted 1px #ccc;
+	display: block;
+	outline: none;
+	padding: 7px 0 7px 3px;
+}
+.sbOptions li:last-child a { border: none;}
+.sbOptions a:link, .sbOptions a:visited{
+	color: #999;
+	text-decoration: none;
+}
+.sbOptions a:hover,
+.sbOptions a:focus,
+.sbOptions a.sbFocus{
+	color: #000;
+}
+.select_wrapper.fullwidth .sbOptions a:hover,
+.select_wrapper.fullwidth .sbOptions a:focus,
+.select_wrapper.fullwidth .sbOptions a.sbFocus{
+	color: #555555;
+}
+.sbOptions li.last a{
+	border-bottom: none;
+}
+.sbOptions .sbDisabled{
+	border-bottom: dotted 1px #515151;
+	color: #999;
+	display: block;
+	padding: 7px 0 7px 3px;
+}
+.sbOptions .sbGroup{
+	border-bottom: dotted 1px #515151;
+	color: #EBB52D;
+	display: block;
+	font-weight: bold;
+	padding: 7px 0 7px 3px;
+}
+.sbOptions .sbSub{
+	padding-left: 17px;
+}

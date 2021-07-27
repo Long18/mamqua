@@ -1,0 +1,153 @@
+﻿@model ProjectMamQua.EF.User
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Script
+{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.62/jquery.inputmask.bundle.js"></script>
+    <script>
+        $(window).load(function () {
+            var phones = [{ "mask": "(###) ###-####" }, { "mask": "(###) ###-#####" }];
+            $('#txtPhone').inputmask({
+                mask: phones,
+                greedy: false,
+                definitions: { '#': { validator: "[0-9]", cardinality: 1 } }
+            });
+
+            jQuery.browser = {};
+            $('#datepick').datepicker({
+                maxDate: -6570,
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+    </script>
+}
+
+<section id="content">
+    <div class="container top">
+        <div class="row">
+            <div class="span12">
+                <div class="wrapper">
+                    <h2 class="nopadding">Đăng nhập hoặc tạo tài khoản</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <div class="wrapper">
+                    @if (TempData["Error"] != null)//kiểm tra thông báo để hiển thị
+                    {
+                        <div class="alert alert-error alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <h3>Thất bại</h3>
+                            @TempData["Error"]
+                        </div>
+                    }
+                    else if (TempData["Success"] != null)
+                    {
+                        <div class="alert alert-success alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <h3>Thành công</h3>
+                            @TempData["Success"]
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="span6">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="box-wrapper">
+
+                        <div class="inside min-height">
+                            <h4>TẠO TÀI KHOẢN</h4>
+                            <p>Bạn phải nhập đầy đủ các mục bên dưới để đăng ký một tài khoản mới</p>
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <p>Tên tài khoản *</p>
+
+                            @Html.TextBoxFor(model => model.Username, new { @id = "textfield", @class = "input-xlarge", @required = "true" })
+                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+
+                            <p>Mật khẩu *</p>
+                            @Html.TextBoxFor(model => model.Password, new { @id = "textfield", @class = "input-xlarge", @minlength = "6", @maxlength = "10", @required = "true", @type = "password" })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                            <p>Tên khách hàng *</p>
+                            @Html.TextBoxFor(model => model.Name, new { @id = "textfield", @class = "input-xlarge", @required = "true" })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+                            <p>Địa chỉ *</p>
+                            @Html.TextBoxFor(model => model.Address, new { @id = "textfield", @class = "input-xlarge", @required = "true" })
+                            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+
+                            <p>Email *</p>
+                            @Html.TextBoxFor(model => model.Email, new { @id = "textfield", @class = "input-xlarge", @required = "true", @type = "email" })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+                            <p>Ngày sinh *</p>
+                            @Html.TextBoxFor(model => model.BirthDay, new { @id = "datepick", @class = "input-xlarge", @required = "true" })
+                            @Html.ValidationMessageFor(model => model.BirthDay, "", new { @class = "text-danger" })
+
+                            <p>Số điện thoại *</p>
+                            @Html.TextBoxFor(model => model.Phone, new { @id = "txtPhone", @class = "input-xlarge", @required = "true" })
+                            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+
+
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="inside">
+                        <div class="wrapper">
+
+                            <div class="pull-right">
+                                <button type="submit" class="button button-2x">ĐĂNG KÍ</button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div class="span6">
+                <div class="box-wrapper">
+                    @using (Html.BeginForm("Login","Home",FormMethod.Post))
+                    {
+                        <div class="inside min-height">
+                            <h4>ĐĂNG NHẬP</h4>
+                            <p>Nếu bạn đã có tài khoản hãy đăng nhập ở đây.</p>         
+                                <p>Tên tài khoản *</p>
+                                <input type="text" name="username" id="textfield" class="input-xlarge" required="true">
+                                <p>Mật khẩu *</p>
+                                <input type="password" name="password" id="textfield2" class="input-xlarge" required="true">
+                        </div>
+                        <div class="line"></div>
+                        <div class="inside">
+                            <div class="wrapper">
+                               
+                                <div class="pull-left margin-2">
+                                    <a href="/Home/ForgotPassword" class="custom_color">Quên mật khẩu?</a>
+                                </div>
+                                <div class="pull-right">
+                                    <button type="submit" class="button-2x">ĐĂNG NHẬP</button>
+                                    <a class="btn btn-facebook" href="/Home/LoginFacebook" style="text-decoration: none;background-color: #3b5998">
+                                        <i class="icon-facebook"> </i> 
+                                        Đăng nhập với facebook
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,220 @@
+﻿@model ProjectMamQua.EF.User
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="x_content">
+    <div class="">
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Thông tin tài khoản <small>Activity report</small></h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li>
+                                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="#">Settings 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Settings 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+                            <div class="profile_img">
+                                <div id="crop-avatar">
+                                    <!-- Current avatar -->
+                                    <img class="img-responsive avatar-view" src="@Model.Avatar" alt="Avatar" title="Change the avatar">
+                                </div>
+                            </div>
+                            <h3>@Model.Name</h3>
+
+                            <ul class="list-unstyled user_data">
+                                <li>
+                                    <i class="fa fa-map-marker user-profile-icon"></i> @Model.Address
+                                </li>
+                                <li class="m-top-xs">
+                                    <i class="fa fa-calendar user-profile-icon"></i>
+                                    @Model.BirthDay
+                                </li>
+                                <li class="m-top-xs">
+                                    <i class="fa fa-external-link user-profile-icon"></i>
+                                    <a href="http://vismart.com" target="_blank">www.vismart.com</a>
+                                </li>
+                            </ul>
+
+                            <a href="/admin/user/edit/@Model.ID" class="btn btn-success"><i class="fa fa-edit m-right-xs"></i>Sửa thông tin</a>
+                            <br>
+
+
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+
+                            <div class="profile_title">
+                                <div class="col-md-6">
+                                    <h2>Bảng thống kê</h2>
+                                </div>
+                                <div class="col-md-6">
+                                    <div id="reportrange" class="pull-right" style="margin-top: 5px; background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #E6E9ED">
+                                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                                        <span>July 4, 2017 - August 2, 2017</span> <b class="caret"></b>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- start of user-activity-graph -->
+                            <div id="graph_bar" style="width: 100%; height: 280px; position: relative; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                                <svg height="280" version="1.1" width="755" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative; left: -0.25px;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël @@VERSION</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs><text x="32.84375" y="202.07359029412498" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4.011090294124983" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan></text><path fill="none" stroke="#aaaaaa" d="M45.34375,202.07359029412498H730" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="32.84375" y="157.80519272059374" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4.0083177205937375" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">100</tspan></text><path fill="none" stroke="#aaaaaa" d="M45.34375,157.80519272059374H730" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="32.84375" y="113.53679514706249" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4.005545147062492" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">200</tspan></text><path fill="none" stroke="#aaaaaa" d="M45.34375,113.53679514706249H730" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="32.84375" y="69.26839757353125" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4.002772573531246" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">300</tspan></text><path fill="none" stroke="#aaaaaa" d="M45.34375,69.26839757353125H730" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="32.84375" y="25" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">400</tspan></text><path fill="none" stroke="#aaaaaa" d="M45.34375,25H730" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="695.7671875" y="214.57359029412498" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(0.5,-0.866,0.866,0.5,157.3808,721.9865)"><tspan dy="4.011090294124983" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Oct</tspan></text><text x="627.3015625" y="214.57359029412498" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(0.5,-0.866,0.866,0.5,122.4824,663.5704)"><tspan dy="4.011090294124983" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Sep</tspan></text><text x="558.8359375" y="214.57359029412498" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(0.5,-0.866,0.866,0.5,87.748,604.2747)"><tspan dy="4.011090294124983" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Aug</tspan></text><text x="490.3703125" y="214.57359029412498" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(0.5,-0.866,0.866,0.5,55.5136,542.3809)"><tspan dy="4.011090294124983" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Jul</tspan></text><text x="421.9046875" y="214.57359029412498" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(0.5,-0.866,0.866,0.5,20.2793,484.8173)"><tspan dy="4.011090294124983" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Jun</tspan></text><text x="353.4390625" y="214.57359029412498" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(0.5,-0.866,0.866,0.5,-14.7832,426.6718)"><tspan dy="4.011090294124983" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">May</tspan></text><text x="284.9734375" y="214.57359029412498" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(0.5,-0.866,0.866,0.5,-48.5176,366.5237)"><tspan dy="4.011090294124983" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Apr</tspan></text><text x="216.5078125" y="214.57359029412498" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(0.5,-0.866,0.866,0.5,-82.7442,308.094)"><tspan dy="4.011090294124983" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Mar</tspan></text><text x="148.0421875" y="214.57359029412498" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(0.5,-0.866,0.866,0.5,-116.9785,248.23)"><tspan dy="4.011090294124983" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Feb</tspan></text><text x="79.5765625" y="214.57359029412498" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(0.5,-0.866,0.866,0.5,-150.8848,188.3525)"><tspan dy="4.011090294124983" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Jan</tspan></text><rect x="53.901953125" y="166.65887223529998" width="24.174609375000003" height="35.414718058825" rx="0" ry="0" fill="#26b99a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="122.367578125" y="146.73809332721092" width="24.174609375000003" height="55.335496966914064" rx="0" ry="0" fill="#26b99a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="190.833203125" y="124.16121056470999" width="24.174609375000003" height="77.912379729415" rx="0" ry="0" fill="#26b99a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="259.298828125" y="102.912379729415" width="24.174609375000003" height="99.16121056470999" rx="0" ry="0" fill="#26b99a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="327.764453125" y="84.76233672426717" width="24.174609375000003" height="117.31125356985781" rx="0" ry="0" fill="#26b99a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="396.230078125" y="63.07082191323687" width="24.174609375000003" height="139.0027683808881" rx="0" ry="0" fill="#26b99a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="464.695703125" y="48.46225071397154" width="24.174609375000003" height="153.61133958015344" rx="0" ry="0" fill="#26b99a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="533.1613281250001" y="75.0232892580903" width="24.174609375000003" height="127.05030103603468" rx="0" ry="0" fill="#26b99a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="601.626953125" y="95.82943611764999" width="24.174609375000003" height="106.24415417647499" rx="0" ry="0" fill="#26b99a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="670.092578125" y="108.66727141397405" width="24.174609375000003" height="93.40631888015093" rx="0" ry="0" fill="#26b99a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect></svg><div class="morris-hover morris-default-style" style="left: 226.473px; top: 102px; display: none;">
+                                    <div class="morris-hover-row-label">Apr</div><div class="morris-hover-point" style="color: #26B99A">
+                                        Hours worked:
+                                        224
+                                    </div><div class="morris-hover-point" style="color: #34495E">
+                                        SORN:
+                                        -
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of user-activity-graph -->
+
+                            <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                                <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                                    <li role="presentation" class="active">
+                                        <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Đơn hàng đã đặt</a>
+                                    </li>
+                                   
+                                </ul>
+                                <div id="myTabContent" class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                                    @if (Model.Orders.Count == 0)//kiểm tra nếu tài khoản chưa có đơn hàng nào thì thông báo 
+                                    {
+                                        <ul class="messages">
+                                            <li>
+                                            <div class="message_wrapper">
+                                                    <blockquote class="message">Tài khoản hiện chưa có đơn hàng nào.</blockquote>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    }
+                                    else
+                                    {
+                                        <table id="datatable-checkbox" class="table table-striped table-bordered table-hover" role="grid">
+                                            <thead>
+                                                <tr role="row" class="">
+
+
+                                                    <th>Tên</th>
+                                                    <th>SĐT</th>
+                                                    <th>Ngày tạo</th>
+                                                    <th>Thanh toán</th>
+                                                    <td>Tình trạng</td>
+                                                    <th>Hành động</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model.Orders)
+                                                {
+                                                    <tr role="row" id="row_@item.ID" class="odd">
+
+
+                                                        <td>@item.ShipName</td>
+                                                        <td>@item.ShipPhone</td>
+                                                        <td>
+                                                            @if (DateTime.Now.Subtract(item.ShipCreateDate).TotalSeconds > 59)
+                                                            {
+                                                                if (DateTime.Now.Subtract(item.ShipCreateDate).TotalSeconds > 60)
+                                                                {
+                                                                    if (DateTime.Now.Subtract(item.ShipCreateDate).TotalMinutes > 60)
+                                                                    {
+                                                                        if (DateTime.Now.Subtract(item.ShipCreateDate).TotalHours > 60)
+                                                                        {
+                                                                            if (DateTime.Now.Subtract(item.ShipCreateDate).TotalDays > 30)
+                                                                            {
+                                                                                @item.ShipCreateDate
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                <span class="text-center"> @DateTime.Now.Subtract(item.ShipCreateDate).Days ngày trước</span>
+                                                                            }
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <span class="text-center"> @DateTime.Now.Subtract(item.ShipCreateDate).Hours giờ trước</span>
+                                                                        }
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <span class="text-center"> @DateTime.Now.Subtract(item.ShipCreateDate).Minutes phút trước</span>
+                                                                    }
+                                                                }
+                                                                else
+                                                                {
+                                                                    <span class="text-center"> @DateTime.Now.Subtract(item.ShipCreateDate).Minutes phút trước</span>
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="text-center"> @DateTime.Now.Subtract(item.ShipCreateDate).Seconds giây trước</span>
+                                                            }
+
+
+                                                        </td>
+                                                        <td>@Html.DisplayFor(modelItem => item.Payment.Name)</td>
+                                                        <td>
+                                                            @if (item.Status == 0)
+                                                            {
+                                                                <span class="label label-default">Chưa duyệt</span>
+                                                            }
+                                                            else if (item.Status == -1)
+                                                            {
+                                                                <span class="label label-danger">Đã Hủy</span>
+                                                            }
+                                                            else if (item.Status == 1)
+                                                            {
+                                                                <span class="label label-warning">Đã duyệt</span>
+                                                            }
+                                                            else if (item.Status == 2)
+                                                            {
+                                                                <span class="label label-success">Đã giao</span>
+                                                            }
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="">
+                                                                <a href="/Admin/Order/Detail/@item.ID" data-toggle="tooltip" title="Chi tiết đơn hàng" class="btn btn-default btn-sm deleteContentCategory" data-id="@item.ID">
+                                                                    <img src="~/Assets/Admin/images/addressbook grey.ico" width="16px" height="16px" />
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    }
+                                      
+                                    </div>
+                                 
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

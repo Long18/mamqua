@@ -1,0 +1,248 @@
+﻿@model List<ProjectSEM3.Models.CartItem>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+    #map {
+        height: 300px;
+        width: 350px;
+    }
+</style>
+
+@section Script
+{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.62/jquery.inputmask.bundle.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHcEGH3z_DKhJVLSjM8zmAyCKviy9CtH8&callback=initMap">
+    </script>
+    <script>
+
+        // This example displays a marker at the center of Australia.
+        // When the user clicks the marker, an info window opens.
+
+        function initMap() {
+            var uluru = { lat: 10.811393, lng: 106.679232 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: uluru
+            });
+
+            var contentString = '<div id="content">' +
+                '<div id="siteNotice">' +
+                '</div>' +
+                '<h1 id="firstHeading" class="firstHeading">Uluru</h1>' +
+                '<div id="bodyContent">' +
+                '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+                'sandstone rock formation in the southern part of the ' +
+                'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) ' +
+                'south west of the nearest large town, Alice Springs; 450&#160;km ' +
+                '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major ' +
+                'features of the Uluru - Kata Tjuta National Park. Uluru is ' +
+                'sacred to the Pitjantjatjara and Yankunytjatjara, the ' +
+                'Aboriginal people of the area. It has many springs, waterholes, ' +
+                'rock caves and ancient paintings. Uluru is listed as a World ' +
+                'Heritage Site.</p>' +
+                '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
+                'https://en.wikipedia.org/w/index.php?title=Uluru</a> ' +
+                '(last visited June 22, 2009).</p>' +
+                '</div>' +
+                '</div>';
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+                title: 'Uluru (Ayers Rock)'
+            });
+            marker.addListener('click', function () {
+                infowindow.open(map, marker);
+            });
+        }
+        //  google.maps.event.addDomListener(window, 'load', initMap);
+    </script>
+
+    <script>
+        $(window).load(function () {
+            var phones = [{ "mask": "(###) ###-####" }, { "mask": "(###) ###-#####" }];
+            $('#txtPhone').inputmask({
+                mask: phones,
+                greedy: false,
+                definitions: { '#': { validator: "[0-9]", cardinality: 1 } }
+            });
+        });
+    </script>
+}
+<section id="content">
+    <div class="container top">
+        <div class="row">
+            <div class="span12">
+                <h1>Thanh toán</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <div class="wrapper">
+                    @if (TempData["Error"] != null)//kiểm tra thông báo để hiển thị
+                    {
+                        <div class="alert alert-error"> @TempData["Error"]</div>
+                    }
+                    else if (TempData["Error"] != null)
+                    {
+                        <div class="alert alert-success">@TempData["Success"]</div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span8">
+                <div class="accordion" id="accordion2">
+                    <div class="accordion-group">
+                        <div class="accordion-heading"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"><span class="number"></span> Đã có tài khoản</a> </div>
+                        <div id="collapseOne" class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner">
+                                <div class="pull-left">
+                                    <form id="form-checkout">
+                                        <p><strong>Đăng nhập hoặc đăng ký để thanh toán</strong></p>
+                                        <p>
+                                            <strong>Đăng kí nhanh chóng</strong><br>
+                                            Đăng ký thuận tiện cho việc tương lai:
+                                        </p>
+                                        <p>
+                                            Nhanh chóng và đơn giản trong việc thanh toán<br>
+                                            Truy cập vào lịch sử và trạng thái đơn đặt hàng
+                                        </p>
+                                        <a href="/Home/Register" class="button-2x">ĐĂNG KÝ</a>
+                                    </form>
+                                </div>
+                                <div class="pull-right">
+                                    @if (Session["UsernameMember"] == null) //kiểm tra nếu khách hàng chưa đằng nhập 
+                                    {
+                                        using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                                         {
+                                             <p>
+                                                 <strong>ĐĂNG NHẬP</strong>
+                                             </p>
+                                             <p>
+                                                 <strong>Tài khoản*</strong>
+                                             </p>
+                                             <input class="input-xlarge" name="username" type="text" required>
+                                             <p>
+                                                 <strong>Mật khẩu*</strong>
+                                             </p>
+                                             <input class="input-xlarge" type="password" name="password" required>
+
+                                             <div class="wrapper">
+                                                 <div class="pull-left">
+                                                     <a href="#" class="underline">Quên mật khẩu? </a>&nbsp;&nbsp;
+                                                 </div>
+                                                 <div class="pull-right">
+                                                     <button class="button-2x" type="submit">ĐĂNG NHẬP</button>
+                                                 </div>
+                                             </div>
+                                         }
+                                    }
+                                    else//nếu đã đănhg nhâp thì hiển thị nút thanh toán
+                                    {
+                                        using (Html.BeginForm("PaymentUserLogin", "Cart", FormMethod.Post))
+                                        {
+                                            <p>Chào mừng <span style="color: red">@Session["UsernameMember"]</span> quay lại , nhấn vào đây để tiến hành thanh toán.</p>
+                                            <button class="button-2x" type="submit">Thanh toán</button>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"> <span class="number"></span> Chưa có tài khoản</a> </div>
+                        <div id="collapseTwo" class="accordion-body in collapse" style="height: auto;">
+                            <div class="accordion-inner">
+                                <h3>Đặt hàng không cần đăng ký</h3>
+                                <div class="pull-left">
+                                    <div id="map"></div>
+                                </div>
+                                <div class="pull-right">
+                                    @using (Html.BeginForm("Payment", "Cart", FormMethod.Post))
+                                    {
+                                        <p>
+                                            <strong>Tên khách hàng(*)</strong>
+                                        </p>
+                                        <input class="input-xlarge" name="shipName" type="text" required>
+                                        <p>
+                                            <strong>Địa chỉ(*)</strong>
+                                        </p>
+                                        <input class="input-xlarge" name="shipAddress" required>
+                                        <p>
+                                            <strong>Số điện thoại(*)</strong>
+                                        </p>
+                                        <input class="input-xlarge" name="shipPhone" id="txtPhone" type="text" required>
+                                        <p>
+                                            <strong>Email(*)</strong>
+                                        </p>
+                                        <input class="input-xlarge" name="shipEmail" type="email" required>
+                                        <div class="wrapper">
+                                            <div class="pull-right">
+                                                <button class="button-2x" type="submit">Thanh toán</button>
+                                            </div>
+                                        </div>
+                                    }
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="span4">
+                <div class="box-list">
+                    <fieldset>
+                        <legend>Giỏ hàng</legend>
+
+                        @{decimal total = 0; }
+                        @if (Model.Count > 0)
+                        {
+
+                            <table class="table">
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <img width="30px" height="30px" src="@item.ProductModel.Image" />
+                                        </td>
+                                        <td>@item.ProductModel.Name</td>
+                                        <td>@item.Quantity</td>
+                                        @if (item.ProductModel.Sale != null)
+                                        {
+                                            total = total + (item.ProductModel.Sale.GetValueOrDefault(0) * item.Quantity);
+                                        }
+                                        else
+                                        {
+                                            total = total + (item.ProductModel.Price.GetValueOrDefault(0) * item.Quantity);
+                                        }
+                                    </tr>
+                                }
+                                <tr>
+                                    <td colspan="1"></td>
+                                    <td>Tổng tiền : <span style="color: red">@total.ToString("N0") VNĐ</span></td>
+                                </tr>
+                            </table>
+                        }
+                        else
+                        {
+                            <span>Chưa có sản phẩm nào trong giỏ hàng</span>
+                        }
+                    </fieldset>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,80 @@
+﻿@model ProjectSEM3.EF.User
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="content">
+    <div class="container top">
+        <div class="row">
+            <div class="span12">
+                <div class="wrapper">
+                    <h2 class="pull-left">Thông tin tài khoản : <span style="color: red">@Model.Username</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="span6">
+                <div class="row-fluid">
+
+
+                    <fieldset>
+                        <legend>Thông tin</legend>
+                        @using (Html.BeginForm())
+                        {
+                            <table class="span12">
+                                <tr>
+                                    <td>Giới tính</td>
+                                    <td>
+                                        @if (Model.Genre == "Nam")
+                                        {
+                                            <label class="btn btn-primary active">
+                                                @Html.RadioButton("Genre", "Nam", true, new {id = "IsMale"}) Nam
+                                            </label>
+                                            <label class="btn btn-primary">
+                                                @Html.RadioButton("Genre", "Nữ", new {id = "IsFemale"}) Nữ
+                                            </label>
+                                        }
+                                        else
+                                        {
+                                            <label class="btn btn-primary ">
+                                                @Html.RadioButton("Genre", "Nam", new {id = "IsMale"}) Nam
+                                            </label>
+                                            <label class="btn btn-primary active">
+                                                @Html.RadioButton("Genre", "Nữ", true, new {id = "IsFemale"}) Nữ
+                                            </label>
+                                        }
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Họ Tên</td>
+                                    <td>@Html.EditorFor(model => model.Name, new {htmlAttributes = new {@class = "span12"}})</td>
+                                </tr>
+                                <tr>
+                                    <td>Địa chỉ</td>
+                                    <td>@Html.EditorFor(model => model.Address, new {htmlAttributes = new {@class = "span12"}})</td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>@Html.EditorFor(model => model.Email, new {htmlAttributes = new {@class = "span12"}})</td>
+                                </tr>
+                                <tr>
+                                    <td>Ngày sinh</td>
+                                    <td>@Html.EditorFor(model => model.BirthDay, new {htmlAttributes = new {@class = "span12"}})</td>
+                                </tr>
+                                <tr>
+                                    <td>Số điện thoại</td>
+                                    <td>@Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "span12" } })</td>
+                                </tr>
+                            </table>
+                        }
+
+                    </fieldset>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>

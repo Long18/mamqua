@@ -1,0 +1,63 @@
+﻿@model dynamic
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <hr/>
+<section id="content">
+    <div class="container">
+        <h4>
+            Chúng tôi đã gửi email đến tài khoản của bạn .Sẽ quay lại trang chủ trong <span id="counter" style="color: red">5</span> (s) nữa
+        </h4>
+
+
+        <script>
+            setInterval(function() {
+                var div = document.querySelector("#counter");
+                var count = div.textContent * 1 - 1;
+                div.textContent = count;
+                if (count <= 0) {
+                    clearInterval();
+                    location.href = "/";
+
+                }
+            }, 1000);
+        </script>
+        @*@ViewBag.result.GrossTotal
+        <br/>
+        @ViewBag.result.AddressState
+        <br />
+        @ViewBag.result.McShipping1
+        <br />
+        @ViewBag.result.AddressName
+        <br />
+        @ViewBag.result.InvoiceNumber
+        <br/>
+        @ViewBag.result.PaymentStatus
+        <br/>
+        @ViewBag.result.PayerFirstName
+        <br/>
+        @ViewBag.result.PaymentFee
+        <br/>
+        @ViewBag.result.BusinessEmail
+        <br/>
+        @ViewBag.result.PayerEmail
+        <br/>
+        @ViewBag.result.TxToken
+        <br/>
+        @ViewBag.result.PayerLastName
+        <br/>
+        @ViewBag.result.ReceiverEmail
+        <br/>
+        @ViewBag.result.ItemName
+        <br/>
+        @ViewBag.result.Currency
+        <br/>
+        @ViewBag.result.TransactionId
+        <br/>
+        @ViewBag.result.SubscriberId
+        <br />
+        @ViewBag.result.Custom*@
+    </div>
+</section>

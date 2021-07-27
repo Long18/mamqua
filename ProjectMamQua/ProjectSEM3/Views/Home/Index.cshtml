@@ -1,0 +1,297 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Slide{
+
+    <div class="tp-banner-container">
+        <div class="tp-banner">
+            <ul>
+                @foreach (var item in ViewBag.slide)
+                {
+                    <li data-transition="3dcurtain-vertical" data-slotamount="7" data-masterspeed="500" data-thumb="@item.Image">
+                        <!-- MAIN IMAGE -->
+                        <img src="~/Assets/Client/img/dummy.png" alt="mamqua_sliderdy" data-lazyload="@item.Image" data-bgposition="right top" data-kenburns="on" data-duration="12000" data-ease="Power0.easeInOut" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center bottom">
+                        <!-- LAYERS -->
+                        <!-- LAYER NR. 3 -->
+                        <div class="tp-caption text3 skewfromrightshort fadeout"
+                             data-x="10"
+                             data-y="440"
+                             data-speed="1000"
+                             data-start="1500"
+                             data-easing="Power3.easeInOut"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.1"
+                             data-endelementdelay="0.1"
+                             data-endspeed="300"
+                             style="z-index: 5; max-width: auto; font-family: 'Lato', sans-serif;max-height: auto; white-space: nowrap;">@item.Description</div>
+                        </li>
+                    }
+                <!-- SLIDE -->
+                <!-- SLIDE -->
+
+            </ul>
+            <!--          <div class="tp-bannertimer"></div>
+            -->
+        </div>
+    </div>
+}
+
+@* load slide chỉ cho mở trang index *@
+
+<section id="content">
+    @*@<div class="custom_blocks animate-delay-outer">
+            <div class="container">
+                <div class="pull-left">
+                    <div class="wrapper_w">
+                        <div class="box animate-delay scale">
+                            <div class="inside">
+                                <div class="btn_outer"><a href="#" class="btn squared icon-truck-2 icon-4x color1"></a></div>
+                                <a href="#"><span class="text">FREE SHIPPING</span></a>
+                            </div>
+                        </div>
+                        <div class="box animate-delay scale">
+                            <div class="inside">
+                                <div class="btn_outer"><a href="#" class="btn squared icon-money-3 icon-4x color2"></a></div>
+                                <a href="#"><span class="text">CASH ON DELIVERY</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-left">
+                    <div class="wrapper_w">
+                        <div class="box animate-delay scale">
+                            <div class="inside">
+                                <div class="btn_outer"><a href="#" class="btn squared  icon-round8 icon-4x color3"></a></div>
+                                <a href="#"><span class="text">30-DAY RETURNS</span></a>
+                            </div>
+                        </div>
+                        <div class="box animate-delay scale ">
+                            <div class="inside">
+                                <div class="btn_outer"><a href="#" class="btn squared icon-airplane-4 icon-4x color4"></a></div>
+                                <a href="#"><span class="text">World Shipping</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+    <div class="container">
+        <a href="/Product/"><h3 class="padding">Sản phẩm mới </h3></a>
+        <div class="carousel es-carousel-wrapper style0">
+            <div class="es-carousel">
+                <div class="row">
+                    
+
+                    @{Html.RenderAction("NewProduct", "Product");}
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="line" style="border-top: 5px solid #f77b72"></div>
+    <div class="container">
+        <a href="/Product/"><h3 class="padding">Sản phẩm phổ biến </h3></a>
+
+        <div class="carousel es-carousel-wrapper style0">
+            <div class="es-carousel">
+                <div class="row">
+
+                     @{Html.RenderAction("ProductFeature", "Product");} 
+
+                    @{Html.RenderAction("NewProduct", "Product");}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="line" style="border-top: 5px solid #f77b72"></div>
+    <div class="container">
+        <a href="/Product/"><h3 class="padding">Sản phẩm giảm giá </h3></a>
+        <div class="carousel es-carousel-wrapper style0">
+            <div class="es-carousel">
+                <div class="row">
+                     @{Html.RenderAction("SaleProduct", "Product");} 
+
+                    @{Html.RenderAction("NewProduct", "Product");}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fullwidth-block">
+        <div class="parallax-block parallax">
+            <div class="container">
+                <div class="row">
+                    <div class="span8 offset2">
+                        <h1 class="aligncenter">Giới thiệu</h1>
+                        <div class="carousel-testimonials">
+                            <div class="quotes">&#8220;</div>
+                            <div class="flexslider">
+                                <ul class="slides">
+                                    <li>
+                                        <p>Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi</p>
+                                        <p><span>Admin, Thành Long</span></p>
+                                    </li>
+                                    <li>
+                                        <p>Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi</p>
+                                        <p><span>Mod, Nguyễn Văn A </span></p>
+                                    </li>
+                                    <li>
+                                        <p>Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi</p>
+                                        <p><span>Mod, Vũ Văn B</span></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <h3 class="padding">THƯƠNG HIỆU</h3>
+                <div class="brands_block" id="brands0">
+                    <ul class="jcarousel-skin-brands">
+                        <li><a href="#"><img src="~/Assets/Client/img/sport/brand_1.png" alt="3docean" title="3docean" /></a></li>
+                        <li><a href="#"><img src="~/Assets/Client/img/sport/brand_2.png" alt="Graphicriver" title="Graphicriver" /></a></li>
+                        <li><a href="#"><img src="~/Assets/Client/img/sport/brand_3.png" alt="Videohive" title="Videohive" /></a></li>
+                        <li><a href="#"><img src="~/Assets/Client/img/sport/brand_4.png" alt="Audiojungle" title="Audiojungle" /></a></li>
+                        <li><a href="#"><img src="~/Assets/Client/img/sport/brand_5.png" alt="Activeden" title="Activeden" /></a></li>
+                        <li><a href="#"><img src="~/Assets/Client/img/sport/brand_6.png" alt="ThemeForest" title="ThemeForest" /></a></li>
+                        <li><a href="#"><img src="~/Assets/Client/img/sport/brand_7.png" alt="Graphicriver" title="Graphicriver" /></a></li>
+                        <li><a href="#"><img src="~/Assets/Client/img/sport/brand_8.png" alt="Videohive" title="Videohive" /></a></li>
+                        <li><a href="#"><img src="~/Assets/Client/img/sport/brand_1.png" alt="Audiojungle" title="Audiojungle" /></a></li>
+                        <li><a href="#"><img src="~/Assets/Client/img/sport/brand_2.png" alt="Activeden" title="Activeden" /></a></li>
+                        <li><a href="#"><img src="~/Assets/Client/img/sport/brand_3.png" alt="ThemeForest" title="ThemeForest" /></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="container">
+        <div class="row animate-delay-outer">
+            <div class="span3 block_img animate-delay scale"> <a href="#"><img src="~/Assets/Client/img/highline/mamqua1.jpg" alt=""></a> </div>
+            <div class="span3 block_img animate-delay scale"> <a href="#"><img src="~/Assets/Client/img/highline/mamqua2.jpg" alt=""></a> </div>
+            <div class="span3 block_img animate-delay scale"> <a href="#"><img src="~/Assets/Client/img/highline/mamqua3.jpg" alt=""></a> </div>
+            <div class="span3 block_img animate-delay scale"> <a href="#"><img src="~/Assets/Client/img/highline/mamqua4.jpg" alt=""></a> </div>
+        </div>
+    </div>
+    <div class="bottom_block">
+        <div class="container">
+            <div class="row animate-delay-outer">
+                <div class="span6">
+                    <div class="row">
+                        <div class="span3 animate-delay fadeUp">
+                            <h3><i class="icon-briefcase"></i>About <span class="custom_color">Mâm Quả Cưới Hỏi Thảo Quyên</span></h3>
+                            <div class="cleancode">
+                                <p><strong>Lê Nguyễn Thành Long </strong></p>
+                                <p>Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi</p>
+                                <p>Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi, Mâm quả cưới hỏi</p>
+                            </div>
+                        </div>
+                        <div class="span3 animate-delay fadeUp">
+                            <h3><i class="icon-facebook-rect"></i>Facebook</h3>
+                            <div class="fb_outer">
+                                <div>120 people like <strong><a href="#"><span class="custom_color">Mâm Quả Cưới Hỏi Thảo Quyên</span><span class="custom_color1"></span></a></strong></div>
+                                <div class="items_row">
+                                    <div class="item">
+                                        <div class="photo"><a href="#"><img src="~/Assets/Client/img/fb/fb_user.png" alt=""></a></div>
+                                        <div class="name"><a href="#">loremipsum</a></div>
+                                    </div>
+                                    <div class="item aligncenter">
+                                        <div class="photo"><a href="#"><img src="~/Assets/Client/img/fb/fb_user-02.png" alt=""></a></div>
+                                        <div class="name"><a href="#">dolor</a></div>
+                                    </div>
+                                    <div class="item alignright">
+                                        <div class="photo"><a href="#"><img src="~/Assets/Client/img/fb/fb_user-03.png" alt=""></a></div>
+                                        <div class="name"><a href="#">sitamet</a></div>
+                                    </div>
+                                </div>
+                                <div class="items_row">
+                                    <div class="item">
+                                        <div class="photo"><a href="#"><img src="~/Assets/Client/img/fb/fb_user-04.png" alt=""></a></div>
+                                        <div class="name"><a href="#">diam</a></div>
+                                    </div>
+                                    <div class="item aligncenter">
+                                        <div class="photo"><a href="#"><img src="~/Assets/Client/img/fb/fb_user-05.png" alt=""></a></div>
+                                        <div class="name"><a href="#">labore</a></div>
+                                    </div>
+                                    <div class="item alignright">
+                                        <div class="photo"><a href="#"><img src="~/Assets/Client/img/fb/fb_user-06.png" alt=""></a></div>
+                                        <div class="name"><a href="#">nonumy</a></div>
+                                    </div>
+                                </div>
+                                <div class="items_row">
+                                    <div class="item">
+                                        <div class="photo"><a href="#"><img src="~/Assets/Client/img/fb/fb_user-07.png" alt=""></a></div>
+                                        <div class="name"><a href="#">loremipsum</a></div>
+                                    </div>
+                                    <div class="item aligncenter">
+                                        <div class="photo"><a href="#"><img src="~/Assets/Client/img/fb/fb_user-08.png" alt=""></a></div>
+                                        <div class="name"><a href="#">dolor</a></div>
+                                    </div>
+                                    <div class="item alignright">
+                                        <div class="photo"><a href="#"><img src="~/Assets/Client/img/fb/fb_user-09.png" alt=""></a></div>
+                                        <div class="name"><a href="#">sitamet</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="row">
+                        <div class="span3 animate-delay fadeUp">
+                            <h3><i class="icon-twitter-bird"></i> Bản Tin Twitter </h3>
+                            <div class="twit">
+                                <div class="icon"><i class="icon-twitter-bird"></i></div>
+                                <div class="mess">
+                                    Bạn đã gia nhập nhóm những kênh có 100 người đăng ký trên YouTube. ĐẬP TAY ĂN MỪNG THÔI NÀO! <a href="https://twitter.com/Willlee186/status/1405539642510757891?s=20">https://twitter.com/Willlee186/status/1405539642510757891?s=20</a><br>
+                                    3 days ago
+                                </div>
+                            </div>
+                            <div class="twit">
+                                <div class="icon"><i class="icon-twitter-bird"></i></div>
+                                <div class="mess">
+                                    Bạn đã gia nhập nhóm những kênh có 100 người đăng ký trên YouTube. ĐẬP TAY ĂN MỪNG THÔI NÀO! <a href="https://twitter.com/Willlee186/status/1405539642510757891?s=20">https://twitter.com/Willlee186/status/1405539642510757891?s=20</a><br>
+                                    3 days ago
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span3 animate-delay fadeUp">
+                            <h3><i class="icon-mail-1"></i> Liên Lạc Với Chúng Tôi </h3>
+                            <div class="cleancode">
+                                <ul class="icons">
+                                    <li>
+                                        <i class="icon-call"></i><strong> Điện Thoại :</strong><br>
+                                        123456789, 123456789
+                                    </li>
+                                    <li>
+                                        <i class="icon-mobile-alt"></i><strong> Di Động:</strong><br>
+                                        123456789,  123456789
+                                    </li>
+                                    <li>
+                                        <i class="icon-mail-1"></i><strong> E-MAIL Địa Chỉ:</strong><br>
+                                        <a href="mailto:info@mydomain.com">INFO@THANHLONG.COM</a>
+                                    </li>
+                                    <li>
+                                        <i class="icon-skype"></i><strong>Skype:</strong><br>
+                                        DAYLASKYPE
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

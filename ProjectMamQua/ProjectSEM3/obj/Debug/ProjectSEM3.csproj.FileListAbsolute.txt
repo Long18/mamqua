@@ -1,0 +1,298 @@
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\roslyn\csc.exe
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\roslyn\System.Collections.Immutable.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\roslyn\System.Reflection.Metadata.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\roslyn\vbc.exe
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\roslyn\VBCSCompiler.exe
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\roslyn\VBCSCompiler.exe.config
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\ProjectSEM3.dll.config
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\ProjectSEM3.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\ProjectSEM3.pdb
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\Antlr3.Runtime.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\Microsoft.Web.Infrastructure.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\Newtonsoft.Json.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\System.Web.Helpers.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\System.Web.Mvc.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\System.Web.Optimization.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\System.Web.Razor.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\System.Web.WebPages.Deployment.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\System.Web.WebPages.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\System.Web.WebPages.Razor.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\WebGrease.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\System.Web.Helpers.xml
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\System.Web.Mvc.xml
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\System.Web.Optimization.xml
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\System.Web.Razor.xml
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\System.Web.WebPages.xml
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\System.Web.WebPages.Deployment.xml
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\System.Web.WebPages.Razor.xml
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\Antlr3.Runtime.pdb
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\Newtonsoft.Json.xml
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\obj\Debug\ProjectSEM3.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\obj\Debug\ProjectSEM3.pdb
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\ClosedXML.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\DocumentFormat.OpenXml.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\ClosedXML.pdb
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\ClosedXML.xml
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\EntityFramework.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\EntityFramework.SqlServer.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\EntityFramework.xml
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\EntityFramework.SqlServer.xml
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\CKFinder.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\CKFinder.pdb
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\PagedList.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\PagedList.Mvc.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\PagedList.xml
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\PagedList.Mvc.xml
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\Microsoft.AspNet.Identity.Core.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\Microsoft.Owin.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\Owin.dll
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\Microsoft.AspNet.Identity.Core.xml
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\bin\Microsoft.Owin.xml
+D:\SEM 3\ProjectSEM3\ProjectSEM3\ProjectSEM3\obj\Debug\ProjectSEM3.csprojResolveAssemblyReference.cache
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\obj\Debug\ProjectSEM3.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\obj\Debug\ProjectSEM3.pdb
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\ProjectSEM3.dll.config
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\ProjectSEM3.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\ProjectSEM3.pdb
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\Antlr3.Runtime.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\CKFinder.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\ClosedXML.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\DocumentFormat.OpenXml.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\EntityFramework.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\EntityFramework.SqlServer.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\Microsoft.AspNet.Identity.Core.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\Microsoft.Owin.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\Microsoft.Web.Infrastructure.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\Newtonsoft.Json.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\Owin.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\PagedList.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\PagedList.Mvc.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.Helpers.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.Mvc.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.Optimization.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.Razor.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.WebPages.Deployment.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.WebPages.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.WebPages.Razor.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\WebGrease.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\CKFinder.pdb
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\ClosedXML.pdb
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\ClosedXML.xml
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\EntityFramework.xml
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\EntityFramework.SqlServer.xml
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\Microsoft.AspNet.Identity.Core.xml
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\Microsoft.Owin.xml
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\PagedList.xml
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\PagedList.Mvc.xml
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.Helpers.xml
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.Mvc.xml
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.Optimization.xml
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.Razor.xml
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.WebPages.xml
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.WebPages.Deployment.xml
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.WebPages.Razor.xml
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\Antlr3.Runtime.pdb
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\Newtonsoft.Json.xml
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\Facebook.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\Facebook.xml
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\BotDetect.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\bin\BotDetect.Web.Mvc.dll
+D:\SEM 3\Shop\ProjectSEM3\ProjectSEM3\obj\Debug\ProjectSEM3.csprojResolveAssemblyReference.cache
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\ProjectSEM3.dll.config
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\ProjectSEM3.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\ProjectSEM3.pdb
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\Antlr3.Runtime.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\BotDetect.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\BotDetect.Web.Mvc.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\CKFinder.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\ClosedXML.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\DocumentFormat.OpenXml.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\EntityFramework.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\EntityFramework.SqlServer.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\Facebook.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\Microsoft.Owin.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\Newtonsoft.Json.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\Owin.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\PagedList.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\PagedList.Mvc.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.Helpers.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.Mvc.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.Optimization.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.Razor.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.WebPages.Deployment.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.WebPages.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.WebPages.Razor.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\WebGrease.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\CKFinder.pdb
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\ClosedXML.pdb
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\ClosedXML.xml
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\EntityFramework.xml
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\EntityFramework.SqlServer.xml
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\Facebook.xml
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\Microsoft.Owin.xml
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\PagedList.xml
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\PagedList.Mvc.xml
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.Helpers.xml
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.Mvc.xml
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.Optimization.xml
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.Razor.xml
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.WebPages.xml
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.WebPages.Deployment.xml
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\System.Web.WebPages.Razor.xml
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\Antlr3.Runtime.pdb
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\bin\Newtonsoft.Json.xml
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\obj\Debug\ProjectSEM3.csproj.CoreCompileInputs.cache
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\obj\Debug\ProjectSEM3.dll
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\obj\Debug\ProjectSEM3.pdb
+C:\Users\THAOLE\Desktop\Shop\ProjectSEM3\ProjectSEM3\obj\Debug\ProjectSEM3.csprojResolveAssemblyReference.cache
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\ProjectSEM3.dll.config
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\ProjectSEM3.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\ProjectSEM3.pdb
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\Antlr3.Runtime.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\BotDetect.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\BotDetect.Web.Mvc.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\CKFinder.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\ClosedXML.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\DocumentFormat.OpenXml.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\EntityFramework.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\EntityFramework.SqlServer.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\Facebook.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\Microsoft.AspNet.Identity.Core.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\Microsoft.Owin.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\Microsoft.Web.Infrastructure.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\Newtonsoft.Json.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\Owin.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\PagedList.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\PagedList.Mvc.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\System.Web.Helpers.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\System.Web.Mvc.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\System.Web.Optimization.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\System.Web.Razor.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\System.Web.WebPages.Deployment.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\System.Web.WebPages.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\System.Web.WebPages.Razor.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\WebGrease.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\CKFinder.pdb
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\ClosedXML.pdb
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\ClosedXML.xml
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\EntityFramework.xml
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\EntityFramework.SqlServer.xml
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\Facebook.xml
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\Microsoft.AspNet.Identity.Core.xml
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\Microsoft.Owin.xml
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\PagedList.xml
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\PagedList.Mvc.xml
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\System.Web.Helpers.xml
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\System.Web.Mvc.xml
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\System.Web.Optimization.xml
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\System.Web.Razor.xml
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\System.Web.WebPages.xml
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\System.Web.WebPages.Deployment.xml
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\System.Web.WebPages.Razor.xml
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\Antlr3.Runtime.pdb
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\bin\Newtonsoft.Json.xml
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\obj\Debug\ProjectSEM3.csproj.CoreCompileInputs.cache
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\obj\Debug\ProjectSEM3.csproj.CopyComplete
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\obj\Debug\ProjectSEM3.dll
+E:\[Application] Đồ án\Lập Trình Web\[Đồ Án]\ProjectMamQua\ProjectSEM3\obj\Debug\ProjectSEM3.pdb
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\ProjectSEM3.dll.config
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\ProjectSEM3.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\ProjectSEM3.pdb
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\csc.exe
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\csc.exe.config
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\csc.rsp
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\csi.exe
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\csi.rsp
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\System.AppContext.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\vbc.exe
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\vbc.exe.config
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\vbc.rsp
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\VBCSCompiler.exe
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\Antlr3.Runtime.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\BotDetect.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\BotDetect.Web.Mvc.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\CKFinder.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\ClosedXML.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\DocumentFormat.OpenXml.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\EntityFramework.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\EntityFramework.SqlServer.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\ExcelNumberFormat.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\Facebook.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\Microsoft.Owin.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\Newtonsoft.Json.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\Owin.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\PagedList.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\PagedList.Mvc.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\System.Data.SQLite.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\System.Web.Helpers.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\System.Web.Mvc.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\System.Web.Optimization.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\System.Web.Razor.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\System.Web.WebPages.Deployment.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\System.Web.WebPages.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\System.Web.WebPages.Razor.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\WebGrease.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\Antlr3.Runtime.pdb
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\CKFinder.pdb
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\ClosedXML.pdb
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\ClosedXML.xml
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\DocumentFormat.OpenXml.xml
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\EntityFramework.xml
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\EntityFramework.SqlServer.xml
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\ExcelNumberFormat.xml
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\Facebook.xml
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\Microsoft.Owin.xml
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\Newtonsoft.Json.xml
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\PagedList.xml
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\PagedList.Mvc.xml
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\System.Data.SQLite.xml
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\System.Web.Helpers.xml
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\System.Web.Mvc.xml
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\System.Web.Razor.xml
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\System.Web.WebPages.xml
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\System.Web.WebPages.Deployment.xml
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\System.Web.WebPages.Razor.xml
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\bin\System.Web.Optimization.xml
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\obj\Debug\ProjectSEM3.csproj.AssemblyReference.cache
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\obj\Debug\ProjectSEM3.csproj.CoreCompileInputs.cache
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\obj\Debug\ProjectSEM3.csproj.CopyComplete
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\obj\Debug\ProjectSEM3.dll
+C:\Users\William\Desktop\ProjectMamQua\ProjectSEM3\obj\Debug\ProjectSEM3.pdb

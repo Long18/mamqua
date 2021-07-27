@@ -1,0 +1,94 @@
+/*********************************************
+	-	SETTINGS FOR BANNER CONTAINERS	-
+**********************************************/
+
+.tp-banner-container {
+	width:100%;
+	position:relative;
+	padding:0;
+}
+.tp-banner {
+	width:100%;
+	position:relative;
+}
+.tp-banner-fullscreen-container {
+	width:100%;
+	position:relative;
+	padding:0;
+}
+.tp-leftarrow.default, .tp-rightarrow.default {
+	display:block;
+	cursor:pointer;
+	width:59px;
+	height: 61px;
+	background:#FFF;
+	color:#2bb3df;
+	text-align:center;
+}
+.tp-leftarrow.default:before, .tp-rightarrow.default:before {
+ 	font-family: 'andepict';
+	font-size:30px;
+	line-height:64px;
+	content:'\e75d';
+	margin: 0 4px 0 0
+
+}
+.tp-rightarrow.default:before {
+	content:'\e75e';
+	margin: 0 0 0 2px
+}
+.tp-leftarrow:hover, .tp-rightarrow:hover {
+	background-position:bottom left;
+}
+.text1 {
+	font: bold 74px/1em 	'Merriweather', sans-serif;
+	color:#2bb3df;
+	text-transform:uppercase;
+	text-shadow: 2px 2px 0px rgba(0, 0, 0, .15);
+}
+.text2 {
+	font: bold 36px/1em 	'Merriweather', sans-serif;
+	color:#2bb3df;
+	text-transform:uppercase;
+	text-shadow: 2px 2px 0px rgba(0, 0, 0, .15);
+}
+.text3 {
+	font: bold 36px/1em 	'Merriweather', sans-serif;
+	color:#555555;
+	text-transform: none;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, .15);
+}
+.text4 {
+	font: bold 24px/1em 'Merriweather', serif;
+	color:#2bb3df;
+	text-transform:uppercase;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, .15);
+}
+.text5 {
+	font: bold 64px/1em 'Merriweather', serif;
+	color:#2bb3df;
+	text-transform:uppercase;
+	text-shadow: 2px 2px 0px rgba(0, 0, 0, .15);
+}
+.text6 {
+	font: bold 36px/1em 'Merriweather', serif;
+	color:#555555;
+	text-transform: none;
+}
+.text7 {
+	font: bold 24px/1em 'Merriweather', serif;
+	color:#555555;
+	text-transform:uppercase;
+}
+.text8 {
+	font: bold 64px/1em 'Merriweather', serif;
+	color:#2bb3df;
+	text-transform:uppercase;
+	text-shadow: 2px 2px 0px rgba(0, 0, 0, .15);
+}
+.text9 {
+	font: bold 47px/1em 'Merriweather', serif;
+	color:#555555;
+	text-transform: none;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, .15);
+}

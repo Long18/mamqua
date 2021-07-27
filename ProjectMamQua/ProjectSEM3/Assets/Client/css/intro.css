@@ -1,0 +1,60 @@
+.container {
+	width:1205px !important;
+}
+.aligncenter {
+	text-align:center;
+}
+#logo_intro {
+	padding: 40px 0 0 0;
+}
+#slogan {
+	font: 18px/22px 'Oswald', sans-serif;
+	text-transform:uppercase;
+	color:#000;
+	margin: 10px 0 40px;
+}
+.wrapper {
+	width:100%;
+	overflow: hidden;
+}
+.desktop {
+	position: relative;
+	float:left;
+	display:inline-block;
+	margin: 0 5px;
+	width:291px;
+	height: 276px;
+	background: url(../img/desktop.png) no-repeat 0 0;
+	text-align:center;
+}
+.desktop .bg {
+	width:291px;
+	height: 175px;
+	position:absolute;
+	top:0;
+	left:0;
+	-webkit-transition: opacity 0.5s ease-in-out;
+	-moz-transition: opacity 0.5s ease-in-out;
+	-o-transition: opacity 0.5s ease-in-out;
+	transition: opacity 0.5s ease-in-out;
+	opacity:0;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+.desktop .bg:hover {
+	-webkit-transition: opacity 0.5s ease-in-out;
+	-moz-transition: opacity 0.5s ease-in-out;
+	-o-transition: opacity 0.5s ease-in-out;
+	transition: opacity 0.5s ease-in-out;
+	opacity:1;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+.desktop .theme_img {
+	padding: 10px 0 15px;
+}
+.desktop .theme_name {
+	font: 12px/16px 'Oswald', sans-serif;
+	text-transform:uppercase;
+}
+.desktop:hover {
+	background: url(../img/desktop.png) no-repeat 0 right;
+}

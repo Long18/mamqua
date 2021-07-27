@@ -1,0 +1,151 @@
+/* Elastislide Style */
+
+ .es-carousel-wrapper {
+	position: relative;
+	margin:0 -10px;
+}
+@media only screen and (max-width: 767px) {
+ .es-carousel-wrapper {
+ margin-left:0;
+}
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+ .es-carousel-wrapper {
+ margin-left:0;
+}
+}
+.es-carousel {
+	overflow:hidden;
+	padding: 0 10px;
+	margin-top:10px;
+	margin-bottom:11px;
+}
+.style1 .es-carousel {
+	margin-bottom:14px;
+}
+.style2 .es-carousel {
+	margin: 0 0 30px;
+}
+.es-carousel .product_outer {
+	display:none;
+}
+.es-carousel .carousel_items .product, .es-carousel .carousel_item {
+	height:100%;
+/*	display:block;
+	float:left;
+*/	line-height:1.5em;
+}
+
+
+.elastislide-list {
+	list-style-type: none;
+	display: none;
+}
+
+.no-js .elastislide-list {
+	display: block;
+}
+
+.elastislide-carousel .carousel_items .carousel_item{
+	min-width: 20px; /* minimum width of the image (min width + border) */
+}
+
+.elastislide-horizontal {
+	padding: 0;
+}
+
+.elastislide-vertical {
+	padding: 0;
+}
+
+.elastislide-carousel {
+	position: relative;
+}
+
+.elastislide-carousel .carousel_items{
+	position: relative;
+	display: block;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	-ms-transform: translateX(0px);
+	-o-transform: translateX(0px);
+	transform: translateX(0px);
+}
+
+.elastislide-horizontal .carousel_items {
+	white-space: nowrap;
+	max-height: none !important;
+}
+.elastislide-carousel .carousel_items .carousel_item {
+	-webkit-backface-visibility: hidden;
+	float: none !important;
+	white-space: normal;
+}
+
+.elastislide-horizontal .carousel_items .carousel_item{
+	height: 100%;
+	display: inline-block;
+}
+
+.elastislide-vertical .carousel_items .carousel_item{
+	display: block;
+}
+
+.elastislide-carousel .carousel_items .carousel_itema {
+	display: inline-block;
+	width: 100%;
+}
+
+.elastislide-carousel .carousel_items .carousel_itema img {
+	display: block;
+	border: 2px solid white;
+	max-width: 100%;
+}
+
+/* Navigation Arrows */
+
+.elastislide-horizontal nav span { display: inline !important;}
+.elastislide-horizontal nav a.btn {
+	position:absolute;
+	top:-31px;
+	right:8px;
+	background-color:#e2e2e2;
+	width:34px;
+	height:26px;
+	padding: 4px 0;
+	margin-top:-13px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-transition: background-color 0.25s 0s ease;
+	-moz-transition: background-color 0.25s 0s ease;
+	-o-transition: background-color 0.25s 0s ease;
+	color:#fff;
+}
+.elastislide-horizontal nav  a.btn:hover {
+	color:#fff;
+	background-color:#9d3bc6;
+	-webkit-transition: background-color 0.25s 0s ease;
+	-moz-transition: background-color 0.25s 0s ease;
+	-o-transition: background-color 0.25s 0s ease;
+}
+.elastislide-horizontal nav  span.disable a {
+	opacity:0.3;
+}
+.elastislide-horizontal nav  span.disable a.btn:hover {
+	background-color:#e2e2e2;
+}
+.style1 .elastislide-horizontal nav  a.btn {
+	top:-30px;
+}
+.elastislide-horizontal nav  .es-nav-prev a.btn {
+	right:50px;
+	left:auto;
+}
+.elastislide-horizontal nav  span:hover {
+	opacity:1.0;
+}

@@ -1,0 +1,25 @@
+body { background: url(../img/body_v4_bg.jpg) repeat #2a2a2a; color: #cdcdcd; }
+a { color: #cdcdcd; }
+a:hover { color: #cdcdcd; }
+#nav, #nav a, .product, .product a, .preview, .preview a, .custom_menu_title { color:#000; }
+#nav > li > a { color: #fff; }
+h1, h2, h3, h4, h1 a, h2 a, h3 a,  h1 a:hover, h2 a:hover, h3 a:hover { color:#fff; }
+#topline { background:#090909; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.27); color:#9b9b9b; }
+#topline i.white { color:#fff; }
+.custom_color, a .custom_color, .flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover, .flex-direction-nav a, h4 [class^="icon-"], h4 [class*=" icon-"], h2 a:hover, h2 a.active, .nav-list li li a:hover, #topline a, .product .product-tocart a, .preview [class^="icon-"], .preview [class^="icon-"], .twit a, .twit .icon, .form-login button i, #header.header_v_2 #nav li li li a:hover,h3 span, h3 a.active {color: #ff0066;}
+a.btn, .loader-slider, .nav-header > a, .nav-list > li > a:hover, button, .form-search button, .form-mail button, .shoppingcart .fadelink span a, .shopping_cart_mini .button:hover, a.small_icon_color i, .middle_icon_color, .nav-tabs > li > a:hover, .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .direction-nav a:hover, .es-nav a.btn:hover, .button_small, #topline a.button_small { background-color:#ff0066; }
+button:hover, .form-search button.btn:hover, .form-mail button.btn:hover, .shoppingcart:hover .fadelink span a, a.small_icon_color:hover i, button:hover, .form-search button.btn:hover, .form-mail button.btn:hover, .shoppingcart:hover .fadelink span a, a.small_icon_color:hover i, .button_small:hover, #topline a.button_small:hover { background-color:#d00053; }
+.style2 .es-nav, .custom_blocks .box .inside, .tab-content, #header.header_v_2 .bylink li li:hover a { border-color:#ff0066; }
+#nav > li.hover > a, #nav > li > a:hover { background: #ff0066; color: #fff; }
+#nav > li.menu_home_link > a [class^="icon-"], #nav > li.menu_home_link > a { color: #fff;background: none !important;}
+#nav > li.menu_home_link > a:hover [class^="icon-"], #nav > li.menu_home_link:hover > a [class^="icon-"] { color: #ff0066;}
+#nav > li > ul, #nav li:hover .menu_custom_block { border-top-color:#ff0066; }
+.nav-header > a:hover, .nav-list li a, .nav-list li a:hover { color:#fff;}
+.nav-list [class^="icon-"] {    color: #fff;}
+.nav-list [class^="icon-"]:hover {    color: #ff0066;}
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus { border-color:#ff0066; }
+#bottom_block h2, #bottom_block strong, #bottom_block ul.icons [class^="icon-"], #bottom_block ul.icons [class*=" icon-"] {color:#fff;}
+.es-nav a.btn { background-color:#4b4b4b; }
+#spy {    background:greenyellow
+              ;}
+#themeDemos .arrow {background: #ff0066;}

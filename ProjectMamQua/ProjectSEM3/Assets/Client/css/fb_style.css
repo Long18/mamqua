@@ -1,0 +1,6 @@
+.fb_outer { width: 100%;
+}
+.fb_outer .items_row { margin:10px 0 0 0; overflow:hidden; width:100%;}
+.fb_outer .items_row .item { float:left; text-align:left; width:33%; font-size:11px;  }
+.fb_outer .items_row .item .name { width:60px; text-align:center; }
+.fb_outer .items_row .item .name a { text-decoration:none;}

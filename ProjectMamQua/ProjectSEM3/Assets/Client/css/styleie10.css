@@ -1,0 +1,6 @@
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { 
+	.product-img-box .more-views li i {
+		padding:12px 0 0 0;
+		height:50px;
+	}
+} 

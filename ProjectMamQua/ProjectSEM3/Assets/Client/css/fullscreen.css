@@ -1,0 +1,90 @@
+body {
+	color:#000;
+}
+a {
+	color: #606060;
+}
+a:hover {
+	color: #606060;
+}
+#nav > li > a {
+	color: #000;
+}
+#nav li ul, #nav li ul a, .product {
+	color:#000;
+}
+h1, h2, h3, h4 {
+	color:#000;
+}
+#topline {
+	background:#fff;
+	-webkit-box-shadow: none;
+	-moz-box-shadow:    none;
+	box-shadow:         none;
+}
+#topline, #topline .phone span {
+	color:#000;
+}
+#topline .fadelink > a {
+	color:#606060;
+	background: #fff url(../img/arrow_down_inverse.png) no-repeat right -2px;
+	border: 1px solid #d9d9d9;
+}
+#topline .fadelink .ul_wrapper ul {
+	background:#fff;
+	border: 1px solid #d9d9d9;
+	margin-top:2px;
+}
+#topline .fadelink li a, #topline .fadelink > a, .nav-list [class^="icon-"]:hover {
+	color:#606060;
+}
+#footer {
+	color:#000;
+}
+#footer a {
+	color:#000;
+}
+#footer_line {
+	background-color:#fff;
+}
+#footer_bottom i {
+	color:#000;
+}
+#footer_line button i {
+	color:#fff;
+}
+#footer_button {
+	background:#fff;
+	color:#000;
+}
+#footer_popup {
+	background-color:rgba(255, 255, 255, 0.9);
+}
+#footer_popup h3, #footer_popup h4 {
+	color:#000;
+}
+.custom_color, a .custom_color, .flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover, .flex-direction-nav a, h2 i, h2 span, #nav > li:hover > a, .nav-list li li a:hover, #topline a, .product .product-tocart a, .twit a, .twit .icon, .form-login button i {
+	color: #606060;
+}
+.nav-list > li:hover > a {
+	color:#fff;
+}
+.es-nav span:hover, .loader-slider, .nav-header > a, .nav-list > li > a:hover, button, .button, .form-search button, .form-mail button, .shoppingcart .fadelink span a, .shopping_cart_mini .button:hover, a.small_icon_color i, .middle_icon_color, .nav-tabs > li > a:hover, .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .direction-nav a:hover, .button_small, #topline a.button_small {
+	background-color:#606060;
+}
+button:hover, .button:hover, .form-search button.btn:hover, .form-mail button.btn:hover, .shoppingcart:hover .fadelink span a, a.small_icon_color:hover i, button:hover, .form-search button.btn:hover, .form-mail button.btn:hover, .shoppingcart:hover .fadelink span a, a.small_icon_color:hover i, .button_small:hover, #topline a.button_small:hover {
+	background-color:#000;
+}
+.style2 .es-nav, .custom_blocks .box .inside, .tab-content {
+	border-color:#606060;
+}
+#nav > li > ul, #nav li:hover .menu_custom_block {
+	border-top-color:#606060;
+}
+#nav>li:hover>a {
+	background-color:#606060;
+	color:#fff;
+}
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+	border-color:#ccc;
+}

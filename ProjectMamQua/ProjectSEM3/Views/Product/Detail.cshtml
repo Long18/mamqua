@@ -1,0 +1,257 @@
+﻿@model ProjectSEM3.Models.ProductModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Script
+{
+    <script src="~/Assets/Client/js/jquery.elevatezoom.js"></script>
+    <script src="~/Assets/Client/ProductController.js"></script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=2102258096591591&autoLogAppEvents=1" nonce="yn69eMM5"></script>
+}
+<hr />
+<section id="content">
+
+    <div class="container top">
+
+        <div class="content_top">
+            <div class="wrapper">
+                <h2 class="pull-left">Chi tiết sản phẩm</h2>
+
+            </div>
+            <div class="wrapper_w">
+                <div class="pull-left">
+                    <div class="breadcrumbs">
+                        <a href="/Home">Trang chủ</a> <span>›</span> <a href="/Product">Sản phẩm</a> <span>›</span> <a href="/chi-tiet/@Model.MetaTitle-@Model.ID">@Model.Name</a>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <div class="direction-nav">
+                        <a href="#" class="prev"><i class="icon-left-thin"></i></a>
+                        <div class="small_preview prev hidden-phone hidden-tablet" style="display: none;">
+                            <img src="~/Assets/Client/img/small_preview.jpg" width="85" height="85" alt="">
+                        </div>
+                        <a href="#" class="next"><i class="icon-right-thin"></i></a>
+                        <div class="small_preview next hidden-phone hidden-tablet" style="display: none;">
+                            <img src="~/Assets/Client/img/small_preview.jpg" width="85" height="85" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-box">
+            <div class="row">
+                <div class="span5">
+                    <div class="product-img-box noselect">
+                        <div class="row">
+                            <div class="span1">
+                                <div class="product-more-views">
+                                    <div class="jcarousel-skin-previews">
+                                        <div class="jcarousel-container jcarousel-container-vertical" style="position: relative; display: block;">
+                                            <div class="jcarousel-clip jcarousel-clip-vertical" style="position: relative; height: 360px;">
+                                                <ul class="jcarousel jcarousel-list jcarousel-list-vertical" data-id="@Model.ID" style="overflow: hidden; position: relative; top: 0px; margin: 0px; padding: 0px; left: 0px; height: 1036px;">
+                                                    @foreach (var item in ViewBag.listImages)
+                                                    {
+                                                        <li><img class='cloudzoom-gallery' src="@item" data-cloudzoom="useZoom: '#CloudZoom', image: '@item', zoomImage: '@item' "></li>
+                                                    }
+                                                    @*<li><img class='cloudzoom-gallery5' src="/Assets/Client/img/product_page_img_sm1.jpg" data-cloudzoom="useZoom: '#CloudZoom', image: '/Assets/Client/img/product_page_img_sm1.jpg', zoomImage: '/Assets/Client/img/product_page_img_sm1.jpg' "></li>
+                                                        <li><img class='cloudzoom-gallery5' src="/Assets/Client/img/product_page_img_big1_zoom.jpg" data-cloudzoom="useZoom: '#CloudZoom', image: '/Assets/Client/img/product_page_img_big1_zoom.jpg', zoomImage: '/Assets/Client/img/product_page_img_big1_zoom.jpg' "></li>*@
+
+                                                </ul>
+                                            </div>@*<a class="btn jcarousel-prev jcarousel-prev-vertical jcarousel-prev-disabled jcarousel-prev-disabled-vertical" disabled="disabled" style="display: block;"><i class="icon-down"></i></a>*@<a class="btn jcarousel-next jcarousel-next-vertical" style="display: block;"><i class="icon-up"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="span4">
+                                <div class="product-image">
+                                    <img class="cloudzoom" id="CloudZoom" src="@Model.Image" data-cloudzoom="zoomImage: '@Model.Image'">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span7">
+                    <div class="product-shop">
+                        <div class="product_info_left">
+                            <div class="product-name">
+                                <h1>@Model.Name</h1>
+                            </div>
+                            <p class="availability in-stock"> <span>Nhà sản xuất<strong> @Model.Producer</strong></span> </p>
+                            <p class="availability in-stock"> <span>Danh mục<strong> @Model.ProductCategory</strong></span> </p>
+                            <div class="short-description">@Html.Raw(Model.Description) </div>
+                            <div class="price-box">
+                                @if (Model.Quantity > 4)
+                                {
+                                    if (Model.Sale == null)
+                                    {
+                                        <div class="product-price"><span class="sort-price">@(Model.Price.HasValue ? Model.Price.Value.ToString("N0") + " VND" : "Lien he") </span></div>
+                                    }
+                                    else
+                                    {
+                                        <span class="special-price">
+                                            <span class="price">@(Model.Sale.HasValue ? Model.Sale.Value.ToString("N0") + " VNĐ" : "Liên hệ")</span>
+                                        </span>
+                                        <span class="old-price">
+                                            <span class="price">@(Model.Price.HasValue ? Model.Price.Value.ToString("N0") + " VNĐ" : "Liên hệ")</span>
+                                        </span>
+                                    }
+                                }
+                                else
+                                {
+                                    <div class="product-price">
+                                        <h3 class="sort-price" style="color: red">Hết hàng</h3>
+                                    </div>
+                                }
+
+                            </div>
+
+                            @if (Model.Price != null && Model.Quantity > 1)
+                            {
+                                <div class="add-to-cart">
+                                    @using (Html.BeginForm("AddToCart", "Cart", FormMethod.Get))
+                                    {
+                                        <div class="qty">
+                                            <label for="qty">Số lượng:</label>
+                                            <input type="hidden" name="productId" value="@Model.ID" />
+                                            <input id="qty" class="input-text qty" type="number" title="Qty" value="1" min="1" max="5" name="quantity">
+                                        </div>
+                                        <button class="button btn-cart" title="Them gioi hang" type="submit" onclick="document.getElementById('form-add_to_cart').submit()"><i class="icon-basket"></i>Thêm vào giỏ hàng</button>
+                                    }
+                                </div>
+                            }
+                            <div class="add-to-links">
+                                <ul>
+                                    <li><a href="#" class="small_icon_color"><i class="icon-heart"></i></a><a href="#">Thêm danh sách ưu thích </a></li>
+                                    <li><a href="#" class="small_icon_color"><i class="icon-popup"></i></a><a href="#">Thêm so sánh </a></li>
+                                    <li><a href="#" class="small_icon_color"><i class=" icon-mail-1"></i></a><a href="#">Email đến bạn bè</a></li>
+                                </ul>
+                            </div>
+                            <p class="no-rating">
+                                <a href="#">Là người đầu tiên đánh giá sản phẩm</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="span12">
+            <ul class="nav-tabs contentTab">
+                <li class=""><a href="#tab1">Giới thiệu</a></li>
+                <li class=""><a href="#tab2">Đánh giá</a></li>
+                <li class="active"><a href="#tab3">Bình luận</a></li>
+
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane" id="tab1">
+                    <div class="box-collateral box-description">
+                        <h2>Chi tiết</h2>
+                        <div class="std">
+                            @Html.Raw(Model.Detail)
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab2">
+                    <div class="box-collateral box-reviews" id="customer-reviews">
+                        <div class="form-add">
+                            <h2>Write Your Own Review</h2>
+                            <form action="#" method="post" id="review-form">
+                                <fieldset>
+                                    <h4>You're reviewing: <span class="color">Carven - Gabardine Dress</span></h4>
+                                    <h5>How do you rate this product? <em class="required">*</em></h5>
+                                    <span id="input-message-box"></span>
+                                    <table class="table table-bordered table-hover" id="product-review-table">
+                                        <tbody>
+                                            <tr class="first odd">
+                                                <th>&nbsp;</th>
+                                                <th class="aligncenter">1<span class="star_title"> star</span></th>
+                                                <th class="aligncenter">2<span class="star_title"> stars</span></th>
+                                                <th class="aligncenter">3<span class="star_title"> stars</span></th>
+                                                <th class="aligncenter">4<span class="star_title"> stars</span></th>
+                                                <th class="aligncenter">5<span class="star_title"> stars</span></th>
+                                            </tr>
+                                            <tr class="even">
+                                                <td>Quality</td>
+                                                <td class="aligncenter"><input type="radio" name="ratings[1]" id="Quality_1" value="1" class="radio"></td>
+                                                <td class="aligncenter"><input type="radio" name="ratings[1]" id="Quality_2" value="2" class="radio"></td>
+                                                <td class="aligncenter"><input type="radio" name="ratings[1]" id="Quality_3" value="3" class="radio"></td>
+                                                <td class="aligncenter"><input type="radio" name="ratings[1]" id="Quality_4" value="4" class="radio"></td>
+                                                <td class="aligncenter last"><input type="radio" name="ratings[1]" id="Quality_5" value="5" class="radio"></td>
+                                            </tr>
+                                            <tr class="odd">
+                                                <td>Price</td>
+                                                <td class="aligncenter"><input type="radio" name="ratings[3]" id="Price_1" value="11" class="radio"></td>
+                                                <td class="aligncenter"><input type="radio" name="ratings[3]" id="Price_2" value="12" class="radio"></td>
+                                                <td class="aligncenter"><input type="radio" name="ratings[3]" id="Price_3" value="13" class="radio"></td>
+                                                <td class="aligncenter"><input type="radio" name="ratings[3]" id="Price_4" value="14" class="radio"></td>
+                                                <td class="aligncenter last"><input type="radio" name="ratings[3]" id="Price_5" value="15" class="radio"></td>
+                                            </tr>
+                                            <tr class="last even">
+                                                <td>Value</td>
+                                                <td class="aligncenter"><input type="radio" name="ratings[2]" id="Value_1" value="6" class="radio"></td>
+                                                <td class="aligncenter"><input type="radio" name="ratings[2]" id="Value_2" value="7" class="radio"></td>
+                                                <td class="aligncenter"><input type="radio" name="ratings[2]" id="Value_3" value="8" class="radio"></td>
+                                                <td class="aligncenter"><input type="radio" name="ratings[2]" id="Value_4" value="9" class="radio"></td>
+                                                <td class="aligncenter last"><input type="radio" name="ratings[2]" id="Value_5" value="10" class="radio"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <input type="hidden" name="validate_rating" class="validate-rating" value="">
+                                    <ul class="form-list">
+                                        <li>
+                                            <label for="nickname_field" class="required"><em>*</em>Tài khoản</label>
+                                            <div class="input-box">
+                                                <input type="text" name="nickname" id="nickname_field" class="input-text required-entry" value="">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <label for="summary_field" class="required"><em>*</em>Nội dung</label>
+                                            <div class="input-box">
+                                                <input type="text" name="title" id="summary_field" class="input-text required-entry" value="">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <label for="review_field" class="required"><em>*</em>Đánh giá</label>
+                                            <div class="input-box">
+                                                <textarea name="detail" id="review_field" cols="5" rows="3" class="required-entry"></textarea>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </fieldset>
+                                <div class="buttons-set">
+                                    <button type="submit" title="Submit Review" class="button pull-right">Đánh giá</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane active" id="tab3">
+                    <div class="box-collateral box-tags">
+                        <h2>Bình luận</h2>
+                        <div class="fb-comments" data-href="/chi-tiet/@Model.MetaTitle-@Model.ID" data-width="100%" data-numposts="5"></div>
+
+                        <div id="fb-root"></div>
+                        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=2102258096591591&autoLogAppEvents=1" nonce="yn69eMM5"></script>
+
+
+                        <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="5"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h3 class="padding">Sản phẩm cùng loại</h3>
+        <div class="carousel es-carousel-wrapper style0">
+            <div class="es-carousel">
+                <div class="row">
+                    @{Html.RenderAction("ProductsRelated", "Product", new { id = Model.ID });}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

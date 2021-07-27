@@ -1,0 +1,63 @@
+/*********************************************
+	-	SETTINGS FOR BANNER CONTAINERS	-
+**********************************************/
+
+.tp-banner-container {
+	width:100%;
+	position:relative;
+	padding:0;
+}
+.tp-banner {
+	width:100%;
+	position:relative;
+	visibility:hidden;
+}
+.tp-banner-fullscreen-container {
+	width:100%;
+	position:relative;
+	padding:0;
+}
+.tp-leftarrow.default:before, .tp-rightarrow.default:before, .tparrows.preview3:after {
+	font-family: 'andepict';
+	font-size:30px !important;
+	line-height:74px !important;
+	content:'\e75d';
+	margin: 0 4px 0 0
+}
+.tp-rightarrow.default:before {
+	content:'\e75e';
+	margin: 0 0 0 2px
+}
+.tp-rightarrow.preview3:after {
+	content: '\e75e';
+}
+.tp-leftarrow.preview3:after {
+	content: '\e75d';
+}
+.tparrows.preview3 .tp-arr-imgholder { min-width: 180px;}
+
+.text1 {
+	font: bold 98px/1em 'Changa One', cursive;
+	font-weight:600;
+	color:#ffbf27;
+}
+.text2 {
+	font: bold 36px/1em 'Changa One', cursive;
+	font-weight:600;
+	color:#222a36;
+	text-transform:uppercase;
+}
+.text3 {
+	background-color:rgb(249, 65, 39);
+	font: bold 36px/1.5em 'Changa One', cursive;
+	font-weight:600;
+	color:#fff;
+	text-transform:uppercase;
+	padding: 0 15px;
+}
+.text4 {
+	font: bold 36px/1em 'Changa One', cursive;
+	font-weight:600;
+	color:#fff;
+	text-transform:uppercase;
+}

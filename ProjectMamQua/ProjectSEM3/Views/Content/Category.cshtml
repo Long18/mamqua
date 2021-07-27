@@ -1,0 +1,97 @@
+﻿@model PagedList.IPagedList<ProjectMamQua.EF.Content>
+@using PagedList.Mvc
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="content">
+    <div class="container top">
+        <div class="content_top">
+            <div class="breadcrumbs"><a href="/home">Trang chủ</a> <span>›</span> <a href="/bai-viet/">Bài viết</a> <span>›</span> <a href="/bai-viet/danh-muc/@ViewBag.metaTitle-@ViewBag.id">@ViewBag.name</a></div>
+        </div>
+        <div class="row">
+            <div class="span9">
+                @if (Model.Count != 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        <div class="post-preview">
+                            <h3>
+                                <a href="/bai-viet/@item.MetaTitle-@item.ID">@item.Name</a>
+                            </h3>
+                            <div class="image">
+                                <img src="@item.Image" style="width: 733px; height: 301px;" alt="" class="img-responsive img-rounded">
+                            </div>
+                            <div class="post-meta"> <span class="meta-date"><i class="icon-clock-alt"></i>@item.CreateDate.ToString("yyyy-MM-dd")</span> <span class="meta-author"><i class="icon-user-2"></i><a href="#">@item.CreateBy</a></span> <span class="meta-tags"><i class="icon-tag-1"></i><a href="#">Web Design</a></span> <span class="meta-comment"><i class="icon-chat-1"></i><a href="#">12 comments</a></span> <span class="meta-views"><i class="icon-cog-1"></i><a href="#">@item.ViewCount Lượt xem</a></span> </div>
+                            <p>@item.Description </p>
+                            <p>
+                                <a class="button" href="/bai-viet/@item.MetaTitle-@item.ID">Xem chi tiết</a>
+                            </p>
+                        </div>
+                        <div class="line"></div>
+                    }
+                }
+                else
+                {
+                    <div class="alert alert-error alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <h3>Trống</h3>
+                        Danh mục hiện chưa có bài viết nào.
+                    </div>
+                }
+
+
+
+                <div class="paginator">
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @searchString = @ViewBag.SearchString }))
+                </div>
+            </div>
+            <div class="span3">
+                <div class="block">
+                    <div class="block-title">Danh mục</div>
+                    <div class="block-content">
+                        @{Html.RenderAction("CategoryContent", "Content");}
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="block-content">
+                        <div class="block-title">Text Widget</div>
+                        <p>Maecenas eu enim in lorem scelerisque auctor. Ut non erat. Suspendisse fermentum posuere lectus. Fusce vulputate nibh egestas orci. Aliquam lectus. Morbi eget dolor ullamcorper massa pellentesque sagittis. Morbi sit amet quam. </p>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="block-content">
+                        <div class="block-title">Popular Tags</div>
+                        <div class="tags_cloud"><a href="#">Web Developer</a> <a href="#">Branding</a> <a href="#">Wordpress</a> <a href="#">Web Design</a> <a href="#">Logo</a> <a href="#">PHP</a> <a href="#">Graphic</a> <a href="#">Competitions</a> <a href="#">Awards &amp; Recognition</a></div>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="block-content">
+                        <div class="block-title">Latest Tweets</div>
+                        <div class="twit">
+                            <div class="icon"><i class="icon-twitter-bird"></i></div>
+                            <div class="mess">
+                                Nullam id justo sed diam aliquam tincidunt. Duis sollicitudin, dui ac More info at  labore <a href="#">http://t.co/f9E9cJEg </a>Thanks for the patience :)<br>
+                                3 days ago
+                            </div>
+                        </div>
+                        <div class="twit">
+                            <div class="icon"><i class="icon-twitter-bird"></i></div>
+                            <div class="mess">
+                                Curabitur convallis facilisis lorem. Curabi tur quis tortordi. Maecenas tincidunt adipiscing tellus. Aliquam erat volutpat. Nulla porttitor tortor at nisl. Mauris sem ac risu magna sed <a href="#">http://t.co/VCB4tX7r</a><br>
+                                3 days ago
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="block-content">
+                        <div class="block-title">Features Video</div>
+                        <p><a href="#"><img src="img/features_video.jpg" alt="" class="full-width"></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
